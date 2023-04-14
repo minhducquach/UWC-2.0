@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        
+        <div id="layoutSidenav">
+            
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                        <div class="row">
+                            <div class="col-xl-4 col-md-3">
+                                <div class="card mb-4 total-card">
+                                    <div class="card-body total-header">Total Task</div>
+                                    <div class=" d-flex align-items-center" style="justify-content: right;">
+                                        <p class="total-summary total-task-value">10.157</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-3">
+                                <div class="card mb-4 total-card">
+                                    <div class="card-body total-header">Total MCP</div>
+                                    <div class=" d-flex align-items-center" style="justify-content: right;">
+                                        <p class="total-summary total-task-value">2.016</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-3">
+                                <div class="card mb-4 total-card">
+                                    <div class="card-body total-header">Total Staff</div>
+                                    <div class=" d-flex align-items-center" style="justify-content: right;">
+                                        <p class="total-summary total-task-value">3.450</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Total Task Per Month
+                                    </div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Today task
+                                    </div>
+                                    <div class="card-body"><canvas id="myPieChart" width="100%" height="40"></canvas></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Task
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Task code</th>
+                                            <th>Desciption</th>
+                                            <th>Start date</th>
+                                            <th>Start time</th>
+                                            <th>State</th>
+                                            <th>Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Task code</th>
+                                            <th>Desciption</th>
+                                            <th>Start date</th>
+                                            <th>Start time</th>
+                                            <th>State</th>
+                                            <th>Manage</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody id="tasks-table">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/fake-data/chart-area-demo.js"></script>
+        <script src="assets/fake-data/chart-pie-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+        <script src="components/sidebar.js"></script>
+        <script src="components/navbar.js"></script>
+        <script src="js/hide-side-bar.js"></script>
+        <script type="module" src="js/render-summary-task.js"></script>
+    </body>
+</html>

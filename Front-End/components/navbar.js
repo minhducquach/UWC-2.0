@@ -18,10 +18,18 @@ $(document).ready(function(){
                         <li><a class="dropdown-item" href="#!">Settings</a></li> \
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li> \
                         <li><hr class="dropdown-divider" /></li> \
-                        <li><a class="dropdown-item" href="#!">Logout</a></li> \
+                        <li><a class="dropdown-item logout-btn" href="/login">Logout</a></li> \
                     </ul> \
                 </li> \
             </ul> \
         </nav>'
     );
+    logoutBtn = document.querySelector('.logout-btn')
+    function delete_cookie(name) {
+        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      }
+    logoutBtn.addEventListener('click', () => {
+        delete_cookie('token')
+    })
+
 });

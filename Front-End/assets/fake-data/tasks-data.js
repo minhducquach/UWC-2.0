@@ -1,29 +1,47 @@
 const Task = [
   {
     code: "TASK0001",
-    description: "Dọn rác phường 11 Gò Vấp",
+    description: "Dọn rác phường 2 Quận 2",
     janitor: [
       {
-        name: "Nguyen Van A",
-        ID: "J010121",
-        vehicleCode: "TK0001",
+          staffID: "JN0001",
+          name: "Nguyen Van A",
+          phone: "088765212",
+          address: "132/12 Nguyen Oanh",
+          ward: "2",
+          district: "Quan 2",
+          mcp: "38 Le Loi",
+          vehicle: "TK0001"
       },
       {
-        name: "Nguyen Van B",
-        ID: "J010122",
-        vehicleCode: "TR0004",
+          staffID: "JN0002",
+          name: "Nguyen Van B",
+          phone: "077765212",
+          address: "9 Nguyen Oanh",
+          ward: "2",
+          district: "Quan 2",
+          mcp: "16 Quang Trung",
+          vehicle: "TK0002"
       },
       {
-        name: "Nguyen Van C",
-        ID: "J010123",
-        vehicleCode: "TR0008",
-      },
+          staffID: "JN0003",
+          name: "Nguyen Van C",
+          phone: "022765212",
+          address: "9 Van Luong",
+          ward: "2",
+          mcp: "12 Le Van Duyet",
+          vehicle: "TK0003"
+      }
     ],
-    collector: {
+    collector: [{
       name: "Tran Van T",
+      phone: '091827171',
       ID: "C010121",
-      vehicleCode: "TK0002",
-    },
+      vehicle: "TK0002",
+      address: "94 Van Luong Kha",
+      ward: "2",
+      district: "Quan 2"
+    }],
     route: ["43 Le Van Duyet", "21 Quang Trung", "15 Le Loi"],
     startDate: "2023/01/01",
     startTime: "18:00",

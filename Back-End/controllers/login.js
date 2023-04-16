@@ -26,7 +26,7 @@ const login = async (req, res, next) => {
     // res.json(message);
     // authenticator(req, res);
   } else {
-    res.redirect("/");
+    res.redirect("/login");
   }
 };
 

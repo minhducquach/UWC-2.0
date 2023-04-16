@@ -40,6 +40,7 @@ $(document).ready(function () {
                             <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                             Vehicles Management
                         </a>
+                        
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">

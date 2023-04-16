@@ -1,8 +1,9 @@
 import path from "path";
 import initialPath from "../helpers/initialPath.js";
 // import authenticator from "./controllers/auth.js";
-import Users from "../model/user-data.js";
 import jwt, { verify } from "jsonwebtoken";
+import objectHandle from '../helpers/modify-object.js'
+import modelPath from "../helpers/modelPath.js";
 
 const returnFile = async (req, res) => {
   res.sendFile(path.join(initialPath, "login.html"));
@@ -12,9 +13,10 @@ const returnFirstPage = async (req, res) => {
 };
 
 const login = async (req, res, next) => {
+  const fileName =  modelPath + '/users-data.json'
+  const Users = objectHandle.readJSON(fileName)
   const user = req.body.username;
   const pass = req.body.password;
-  console.log(req.body);
   const result = Users.find(({ username, password }) => {
     return (username === user) & (password === pass);
   });
@@ -26,12 +28,12 @@ const login = async (req, res, next) => {
     // res.json(message);
     // authenticator(req, res);
   } else {
-    res.redirect("/login");
+    res.redirect("/");
   }
 };
 
 export default {
   login,
   returnFile,
-  returnFirstPage,
+  returnFirstPage
 };

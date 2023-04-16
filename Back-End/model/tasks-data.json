@@ -1,0 +1,165 @@
+[
+  {
+    "id": "TASK0001",
+    "description": "Dọn rác phường 2 Quận 2",
+    "janitor": [
+      {
+        "id": "JN0001",
+        "name": "Nguyen Van A",
+        "phone": "088765212",
+        "address": "132/12 Nguyen Oanh",
+        "ward": "2",
+        "district": "Quan 2",
+        "mcp": "38 Le Loi",
+        "vehicle": "TK0001"
+      },
+      {
+        "id": "JN0002",
+        "name": "Nguyen Van B",
+        "phone": "077765212",
+        "address": "9 Nguyen Oanh",
+        "ward": "2",
+        "district": "Quan 2",
+        "mcp": "16 Quang Trung",
+        "vehicle": "TK0002"
+      },
+      {
+        "id": "JN0003",
+        "name": "Nguyen Van C",
+        "phone": "022765212",
+        "address": "9 Van Luong",
+        "ward": "2",
+        "mcp": "12 Le Van Duyet",
+        "vehicle": "TK0003"
+      }
+    ],
+    "collector": [
+      {
+        "name": "Tran Van T",
+        "phone": "091827171",
+        "ID": "C010121",
+        "vehicle": "TK0002",
+        "address": "94 Van Luong Kha",
+        "ward": "2",
+        "district": "Quan 2"
+      }
+    ],
+    "route": [
+      "43 Le Van Duyet",
+      "21 Quang Trung",
+      "15 Le Loi"
+    ],
+    "startDate": "2023/01/01",
+    "startTime": "18:00",
+    "state": "0"
+  },
+  {
+    "id": "TASK0002",
+    "description": "Dọn rác phường 2 Bình Thạnh",
+    "janitor": [
+      {
+        "id": "JN0011",
+        "name": "Nguyen Luc",
+        "phone": "088765212",
+        "address": "132/12 Nam Dan",
+        "ward": "2",
+        "district": "Binh Thanh",
+        "mcp": "16 Nam Dan",
+        "vehicle": "TK0011"
+      },
+      {
+        "id": "JN0012",
+        "name": "Nguyen Huu B",
+        "phone": "077765212",
+        "address": "9 Nguyen Oanh",
+        "ward": "2",
+        "district": "Binh Thanh",
+        "mcp": "16 Nguyen Hung",
+        "vehicle": "TK0012"
+      },
+      {
+        "id": "JN0013",
+        "name": "Nguyen Van C",
+        "phone": "022765212",
+        "address": "9 Van Tran",
+        "ward": "2",
+        "district": "Binh Thanh",
+        "mcp": "12 Le Van Duyet",
+        "vehicle": "TK0003"
+      }
+    ],
+    "collector": [
+      {
+        "name": "Tran Van T",
+        "phone": "091827171",
+        "ID": "C010021",
+        "vehicle": "TK0012",
+        "address": "94 Van Kha",
+        "ward": "2",
+        "district": "Binh Thanh"
+      }
+    ],
+    "route": [
+      "43 Nam Dan",
+      "21 Quang Trung",
+      "15 Le Loi"
+    ],
+    "startDate": "2023/01/02",
+    "startTime": "18:00",
+    "state": "0"
+  },
+  {
+    "id": "TASK0099",
+    "description": "Dọn rác phường 2 Tân Phú",
+    "janitor": [
+      {
+        "id": "JN0001",
+        "name": "Nguyen Van A",
+        "phone": "088765212",
+        "address": "132/12 Nguyen Oanh",
+        "ward": "2",
+        "district": "Quan 2",
+        "mcp": "38 Le Loi",
+        "vehicle": "TK0001"
+      },
+      {
+        "id": "JN0002",
+        "name": "Nguyen Van B",
+        "phone": "077765212",
+        "address": "9 Nguyen Oanh",
+        "ward": "2",
+        "district": "Quan 2",
+        "mcp": "16 Quang Trung",
+        "vehicle": "TK0002"
+      },
+      {
+        "id": "JN0003",
+        "name": "Nguyen Van C",
+        "phone": "022765212",
+        "address": "9 Van Luong",
+        "ward": "2",
+        "mcp": "12 Le Van Duyet",
+        "vehicle": "TK0003"
+      }
+    ],
+    "collector": [
+      {
+        "name": "Tran Van T",
+        "phone": "091827171",
+        "ID": "C010121",
+        "vehicle": "TK0002",
+        "address": "94 Van Luong Kha",
+        "ward": "2",
+        "district": "Quan 2"
+      }
+    ],
+    "route": [
+      "43 Le Van Duyet",
+      "21 Quang Trung",
+      "15 Le Loi"
+    ],
+    "startDate": "2023/01/01",
+    "startTime": "18:00",
+    "state": "0"
+  }
+]

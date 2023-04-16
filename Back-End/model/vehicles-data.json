@@ -1,0 +1,366 @@
+//TK: Truck, TR: Trolley
+//Truck Size: S:5, M:10, L:20
+//Trolley Size: S:0.3, M:0.4, L:0.6
+
+[
+  {
+    "id": "TK0001",
+    "type": "Truck",
+    "size": "Small",
+    "capacity": "5",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0002",
+    "type": "Truck",
+    "size": "Small",
+    "capacity": "5",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0003",
+    "type": "Truck",
+    "size": "Small",
+    "capacity": "5",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0004",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0005",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0006",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0007",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0008",
+    "type": "Truck",
+    "size": "Large",
+    "capacity": "20",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0009",
+    "type": "Truck",
+    "size": "Large",
+    "capacity": "20",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0010",
+    "type": "Truck",
+    "size": "Large",
+    "capacity": "20",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0011",
+    "type": "Truck",
+    "size": "Small",
+    "capacity": "5",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0012",
+    "type": "Truck",
+    "size": "Small",
+    "capacity": "5",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0013",
+    "type": "Truck",
+    "size": "Small",
+    "capacity": "5",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0014",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0015",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0016",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0017",
+    "type": "Truck",
+    "size": "Medium",
+    "capacity": "10",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0018",
+    "type": "Truck",
+    "size": "Large",
+    "capacity": "20",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0019",
+    "type": "Truck",
+    "size": "Large",
+    "capacity": "20",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TK0020",
+    "type": "Truck",
+    "size": "Large",
+    "capacity": "20",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0001",
+    "type": "Trolley",
+    "size": "Small",
+    "capacity": "0.3",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0002",
+    "type": "Trolley",
+    "size": "Small",
+    "capacity": "0.3",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0003",
+    "type": "Trolley",
+    "size": "Small",
+    "capacity": "0.3",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0004",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0005",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0006",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0007",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0008",
+    "type": "Trolley",
+    "size": "Large",
+    "capacity": "0.6",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0009",
+    "type": "Trolley",
+    "size": "Large",
+    "capacity": "0.6",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0010",
+    "type": "Trolley",
+    "size": "Large",
+    "capacity": "0.6",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0011",
+    "type": "Trolley",
+    "size": "Small",
+    "capacity": "0.3",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0012",
+    "type": "Trolley",
+    "size": "Small",
+    "capacity": "0.3",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0013",
+    "type": "Trolley",
+    "size": "Small",
+    "capacity": "0.3",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0014",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0015",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0016",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0017",
+    "type": "Trolley",
+    "size": "Medium",
+    "capacity": "0.4",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0018",
+    "type": "Trolley",
+    "size": "Large",
+    "capacity": "0.6",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0019",
+    "type": "Trolley",
+    "size": "Large",
+    "capacity": "0.6",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  },
+  {
+    "id": "TR0020",
+    "type": "Trolley",
+    "size": "Large",
+    "capacity": "0.6",
+    "location": "Bãi xe XX",
+    "district": "Go Vap",
+    "state": "Free"
+  }
+]

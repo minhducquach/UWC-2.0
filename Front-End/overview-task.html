@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview task list</title>
+    <link rel="stylesheet" href="/Front-End/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Front-End/public/css/overview-task.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <div class="header sticky-top">Header here</div>
+        <!-- Header end -->
+        <!-- Body -->
+        <div class="wrapper d-flex flex-column justify-content-center mx-auto">
+            <!-- Add task button and search bar -->
+            <div class="wrapper-top d-flex flex-row align-items-center justify-content-between mt-4 mb-4">
+                <h1>Danh sách công việc</h1>
+                <div class="d-flex flex-row justify-content-end">
+                    <a href="#" class="add-task-btn mx-3">
+                        <img src="https://www.svgrepo.com/show/8377/plus.svg" alt="Add task">
+                        <div>Thêm công việc</div>
+                    </a>
+                    <input type="text" placeholder="Tìm kiếm công việc" class="search-task">
+                </div>
+            </div>
+            <!-- Add task button and search bar end -->
+            <!-- Overview table -->
+            <table class="task-detail-table">
+            </table>
+            <!-- Overview table end -->
+            <!-- Navigate buttons -->
+            <div class="d-flex justify-content-end mt-4">
+                <a href="#" class="nav-btn prev-btn">&lt;</a>
+                <a href="#" class="nav-btn next-btn">&gt;</a>
+            </div>
+            <!-- Navigate buttons end -->
+        </div>
+        <!-- Body end -->
+    </div>
+    <script src="/Front-End/public/js/task-list.js"></script>
+</body>
+
+</html>

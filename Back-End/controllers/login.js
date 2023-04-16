@@ -3,8 +3,12 @@ import initialPath from "../helpers/initialPath.js";
 // import authenticator from "./controllers/auth.js";
 import Users from "../model/user-data.js";
 import jwt, { verify } from "jsonwebtoken";
+
 const returnFile = async (req, res) => {
   res.sendFile(path.join(initialPath, "login.html"));
+};
+const returnFirstPage = async (req, res) => {
+  res.sendFile(path.join(initialPath, "firstPage.html"));
 };
 
 const login = async (req, res, next) => {
@@ -29,4 +33,5 @@ const login = async (req, res, next) => {
 export default {
   login,
   returnFile,
+  returnFirstPage,
 };

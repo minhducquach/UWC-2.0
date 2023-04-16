@@ -1,6 +1,5 @@
 import path from "path";
 import initialPath from "../helpers/initialPath.js";
-import Users from "../model/user-data.js";
 import jwt from "jsonwebtoken";
 
 const returnIndex = async (req, res) => {

@@ -1,0 +1,26 @@
+[
+    {
+      "id": "0",
+      "username": "admin",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "BO0001",
+      "username": "backofficer",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "JN0001",
+      "username": "janitor",
+      "password": "123456",
+      "role": "janitor"
+    },
+    {
+      "id": "CO0001",
+      "username": "collector",
+      "password": "123456",
+      "role": "collector"
+    }
+  ]

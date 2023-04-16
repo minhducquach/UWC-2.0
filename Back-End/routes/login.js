@@ -1,11 +1,12 @@
-import express from 'express'
-import { loginController } from '../controllers/index.js'
+import express from "express";
+import { loginController } from "../controllers/index.js";
 
-const router = express.Router()
+const router = express.Router();
 
+router.get("/", loginController.returnFile);
+router.post("/login", loginController.login, (req, res) => {
+  const token = req.token;
+  res.redirect(`/dashboard?token=${token}`);
+});
 
-router.get('/', loginController.returnFile)
-router.post('/', loginController.login)
-    
-
-export default router
+export default router;

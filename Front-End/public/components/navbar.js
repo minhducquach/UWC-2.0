@@ -1,9 +1,7 @@
-
-$(document).ready(function(){
-
-    $("body").prepend(
-        '<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark"> \
-            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a> \
+$(document).ready(function () {
+  $("body").prepend(
+    '<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark"> \
+            <a class="navbar-brand ps-3" href="/dashboard" method="get">Start Bootstrap</a> \
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> \
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"> \
                 <div class="input-group"> \
@@ -18,18 +16,18 @@ $(document).ready(function(){
                         <li><a class="dropdown-item" href="#!">Settings</a></li> \
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li> \
                         <li><hr class="dropdown-divider" /></li> \
-                        <li><a class="dropdown-item logout-btn" href="/login">Logout</a></li> \
+                        <li><a class="dropdown-item logout-btn" href="/logout" method="get">Logout</a></li> \
                     </ul> \
                 </li> \
             </ul> \
         </nav>'
-    );
-    logoutBtn = document.querySelector('.logout-btn')
-    function delete_cookie(name) {
-        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-      }
-    logoutBtn.addEventListener('click', () => {
-        delete_cookie('token')
-    })
-
+  );
+  logoutBtn = document.querySelector(".logout-btn");
+  function delete_cookie(name) {
+    document.cookie =
+      name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+  }
+  logoutBtn.addEventListener("click", () => {
+    delete_cookie("token");
+  });
 });

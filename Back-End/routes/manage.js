@@ -1,16 +1,13 @@
-import express from 'express'
-import { manageController } from '../controllers/index.js'
-import authenticator from '../controllers/auth.js'
+import express from "express";
+import { manageController } from "../controllers/index.js";
+import authenticator from "../controllers/auth.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.use('/', authenticator)
-router.get('/', manageController.returnDashboard)
+router.get("/dashboard", authenticator, manageController.returnDashboard);
+router.get("/charts", authenticator, manageController.returnChart);
+router.get("/tasks", authenticator, manageController.returnTask);
+router.get("/mcps", authenticator, manageController.returnMcp);
+router.get("/vehicles", authenticator, manageController.returnVehicle);
 
-router.get('/dashboard', manageController.returnDashboard) 
-router.get('/charts', manageController.returnChart ) 
-router.get('/tasks', manageController.returnTask) 
-router.get('/mcps', manageController.returnMcp) 
-router.get('/vehicles', manageController.returnVihicle) 
-
-export default router
+export default router;

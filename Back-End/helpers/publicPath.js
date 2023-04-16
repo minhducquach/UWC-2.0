@@ -5,6 +5,6 @@ const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
-const initialPath = path.join(__dirname + "../../../", "Front-End");
+const publicPath = path.join(__dirname + "../../../", "Front-End/public");
 
-export default initialPath;
+export default publicPath;

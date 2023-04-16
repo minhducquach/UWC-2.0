@@ -22,7 +22,7 @@ const login = async (req, res, next) => {
     // res.json(message);
     // authenticator(req, res);
   } else {
-    res.send("not OK");
+    res.redirect("/");
   }
 };
 

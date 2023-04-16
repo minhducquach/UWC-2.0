@@ -6,7 +6,12 @@ const router = express.Router();
 router.get("/", loginController.returnFile);
 router.post("/login", loginController.login, (req, res) => {
   const token = req.token;
-  res.redirect(`/dashboard?token=${token}`);
+  res.cookie("token", token);
+  res.redirect(`/dashboard`);
+});
+router.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.redirect("/");
 });
 
 export default router;

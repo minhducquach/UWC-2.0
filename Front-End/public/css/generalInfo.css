@@ -1,0 +1,131 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+.layer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.navbar_detailInfo{
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    justify-content: space-around;
+    background-color: #C9C9C9;
+    height: 100%;
+    padding: 0.5rem 1rem 1rem 0.8rem
+}
+.view_detail{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.2rem;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.title_list{
+    color: #808080;
+    font-size: 16px;
+}
+.item_nav{
+    display: flex;
+    background-color: #eceaea;
+    color: #000;
+    font-size: 16px;
+    min-width: 12rem;
+    height: 3rem;
+    border-radius: 20px;
+    border: solid;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.go_back{
+    position: relative;
+    left: 3rem;
+    bottom: 1rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem 1.5rem 2rem 3rem;
+    background-color: #007777;
+    height: 100%;
+}
+.title_generalInfo{
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 0 2rem 0;
+}
+.title_info_task{
+    font-size: 40px;
+    color: #ffff;
+    font-weight: 700;
+}
+.status_task{
+    border-radius: 30px;
+    min-width: 15rem;
+    height: 2.5rem;
+    background-color: #ffff;
+    border: solid 4px #90EE90;
+    position: absolute;
+    right: 5rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+.statusdot{
+    border-radius: 300px; 
+    border: solid 4px #90EE90; 
+    background-color: #00BC00;
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-left: 0.7rem;
+    margin-top: 0.25rem;
+}
+.constain_status{
+    font-size: 20px;
+    margin-left: 1rem;
+    color: #008000;
+}
+.detail_info{
+    display: flex;
+    flex-direction: column;
+}
+.item_info{
+    display: flex;
+    flex-direction: column;
+    min-width: 17rem;
+    height: 8rem;
+}
+.name_info{
+    color: #FFFF00;
+    font-size: 26px;
+    font-weight: 600;
+}
+.contain_info{
+    color: #D3D3D3;
+    font-size: 20px;
+}
+table{
+    padding: 0.5rem 1.5rem;
+}
+.info_table{
+    background-color: #000;
+    border-radius: 20px;
+    min-width: 70rem;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+}
+.info_row{
+    border-bottom: solid 1px #D3D3D3;
+    height: 3rem;
+}
+th, td{
+    padding: 0.5rem 1.5rem;
+}
+.info_item{
+    color: #ffff;
+}

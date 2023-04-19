@@ -37,6 +37,10 @@ const returnTaskMCP = async (req, res) => {
   );
 };
 
+const returnAddTask = async (req, res) => {
+  res.sendFile(path.join(initialPath, "/add-task.html"));
+};
+
 const returnTaskStaff = async (req, res) => {
   res.sendFile(
     path.join(initialPath, "/overviewTask/overview_task_detail_Staff.html")
@@ -53,4 +57,5 @@ export default {
   returnGenInfo,
   returnTaskMCP,
   returnTaskStaff,
+  returnAddTask,
 };

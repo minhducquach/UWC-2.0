@@ -14,5 +14,6 @@ router.get("/vehicles", authenticator, manageController.returnVehicle);
 router.get("/tasks/generalInfo", manageController.returnGenInfo);
 router.get("/tasks/MCP", manageController.returnTaskMCP);
 router.get("/tasks/Staff", manageController.returnTaskStaff);
+router.get("/tasks/addTask", manageController.returnAddTask);
 
 export default router;

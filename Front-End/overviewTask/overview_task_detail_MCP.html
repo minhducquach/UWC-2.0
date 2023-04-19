@@ -15,9 +15,9 @@
           href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
           rel="stylesheet"
         />
-        <link href="public/css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
-        <link rel="stylesheet" href="public/css/generalInfo.css" />
+        <link rel="stylesheet" href="../css/generalInfo.css" />
         <script
           src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
           crossorigin="anonymous"
@@ -26,50 +26,86 @@
       </head>
 
 
-    <body>
-        <div class = "layer">
-            <nav class = "navbar_detailInfo">
-                <div class = "view_detail">
-                    <div class = "title_list">Xem chi tiết công việc</div>
-                    <a href = "http://127.0.0.1:5500/Front-End/overview_task_detail_GeneralInfo.html" class = "item_nav">Thông tin tổng quan</a>
-                    <a href = "http://127.0.0.1:5500/Front-End/overview_task_detail_Staff.html" class = "item_nav">Danh sách nhân viên</a>
-                    <a href = "http://127.0.0.1:5500/Front-End/overview_task_detail_MCP.html" class = "item_nav" style= "background-color: #007777; color: #ffff;">Danh sách điểm thu gom</a>
-                    <a class = "item_nav">Tuyến đường di chuyển</a>
+    <body class="sb-nav-fixed">
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+              <main>
+                <div class = "layer">
+                    <nav class = "navbar_detailInfo">
+                        <div class = "view_detail">
+                            <!-- <div class = "title_list">Xem chi tiết công việc</div>
+                            <a href = "/tasks/generalInfo" class = "item_nav">Thông tin tổng quan</a>
+                            <a href = "./Staff" class = "item_nav">Danh sách nhân viên</a>
+                            <a href = "./MCP" class = "item_nav" style= "background-color: #007777; color: #ffff;">Danh sách điểm thu gom</a>
+                            <a class = "item_nav">Tuyến đường di chuyển</a> -->
+                        </div>
+                        <div class = "view_detail">
+                            <div class = "title_list">Chỉnh sửa công việc</div>
+                            <a class = "item_nav">Thay đổi thời gian</a>
+                            <a class = "item_nav">Thay đổi nhân viên</a>
+                            <a class = "item_nav">Thay đổi điểm thu gom</a>
+                            <a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>
+                        </div>
+                        <div class = "go_back">
+                            <a href = "/tasks">
+                                <img src = "../assets/img/out_overview_task.png" style = "height: 5rem; margin-top: 1.5rem;" >
+                            </a>
+                            <p style = "margin-top: 0.5rem; font-size: 22px;">Quay lại</p>
+                        </div>
+                    </nav>
+                    <div class = "container">
+                        <div class = "title_info_task" id = "title_diem_thu_gom"></div>
+                        <table class = "info_table">
+                            <!-- <tr class = "info_row">
+                                <th class ="info_item">STT</th>
+                                <th class ="info_item">Địa chỉ</th>
+                                <th class ="info_item">Mã số</th>
+                                <th class ="info_item">Thời điểm thu gom</th>
+                                <th class ="info_item">Nhân viên phụ trách</th>
+                            </tr>
+                            <tr class = "info_row">
+                                <td class ="info_item">1</td>
+                                <td class ="info_item">1 CMT8, P.5, Q.3</td>
+                                <td class ="info_item">Q30001</td>
+                                <td class ="info_item">28/02/2023 - 06:32</td>
+                                <td class ="info_item">JAN0001</td>
+                            </tr> -->
+                        </table>
+                    </div>
                 </div>
-                <div class = "view_detail">
-                    <div class = "title_list">Chỉnh sửa công việc</div>
-                    <a class = "item_nav">Thay đổi thời gian</a>
-                    <a class = "item_nav">Thay đổi nhân viên</a>
-                    <a class = "item_nav">Thay đổi điểm thu gom</a>
-                    <a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>
+              </main>
+              <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between small"
+                  >
+                    <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                    <div>
+                      <a href="#">Privacy Policy</a>
+                      &middot;
+                      <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                  </div>
                 </div>
-                <div class = "go_back">
-                    <a href = "http://127.0.0.1:5500/Front-End/overview-task.html">
-                        <img src = "public/assets/img/out_overview_task.png" style = "height: 5rem; margin-top: 1.5rem;" >
-                    </a>
-                    <p style = "margin-top: 0.5rem; font-size: 22px;">Quay lại</p>
-                </div>
-            </nav>
-            <div class = "container">
-                <div class = "title_info_task">Điểm thu gom Task</div>
-                <table class = "info_table">
-                    <tr class = "info_row">
-                        <th class ="info_item">STT</th>
-                        <th class ="info_item">Địa chỉ</th>
-                        <th class ="info_item">Mã số</th>
-                        <th class ="info_item">Thời điểm thu gom</th>
-                        <th class ="info_item">Nhân viên phụ trách</th>
-                    </tr>
-                    <tr class = "info_row">
-                        <td class ="info_item">1</td>
-                        <td class ="info_item">1 CMT8, P.5, Q.3</td>
-                        <td class ="info_item">Q30001</td>
-                        <td class ="info_item">28/02/2023 - 06:32</td>
-                        <td class ="info_item">JAN0001</td>
-                    </tr>
-                </table>
+              </footer>
             </div>
         </div>
+        <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/datatables-simple-demo.js"></script>
+    <!-- <script src="js/task-list.js"></script> -->
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/navbar.js"></script>
+    <script src="../js/hide-side-bar.js"></script>
+    <script src="../js/hide-side-bar.js"></script>
+    <script type="module" src="../js/overview_task_detail_MCP.js"></script>
+        
         
     </body>
 

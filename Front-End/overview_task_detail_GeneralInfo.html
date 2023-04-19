@@ -31,9 +31,9 @@
             <nav class = "navbar_detailInfo">
                 <div class = "view_detail">
                     <div class = "title_list">Xem chi tiết công việc</div>
-                    <a href = "http://127.0.0.1:5500/overview_task_detail_GeneralInfo.html" class = "item_nav" style= "background-color: #007777; color: #ffff">Thông tin tổng quan</a>
-                    <a href = "http://127.0.0.1:5500/overview_task_detail_Staff.html" class = "item_nav">Danh sách nhân viên</a>
-                    <a href = "http://127.0.0.1:5500/overview_task_detail_MCP.html" class = "item_nav">Danh sách điểm thu gom</a>
+                    <a href = "http://127.0.0.1:5500/Front-End/overview_task_detail_GeneralInfo.html" class = "item_nav" style= "background-color: #007777; color: #ffff">Thông tin tổng quan</a>
+                    <a href = "http://127.0.0.1:5500/Front-End/overview_task_detail_Staff.html" class = "item_nav">Danh sách nhân viên</a>
+                    <a href = "http://127.0.0.1:5500/Front-End/overview_task_detail_MCP.html" class = "item_nav">Danh sách điểm thu gom</a>
                     <a class = "item_nav">Tuyến đường di chuyển</a>
                 </div>
                 <div class = "view_detail">
@@ -44,7 +44,7 @@
                     <a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>
                 </div>
                 <div class = "go_back">
-                    <a href = "http://127.0.0.1:5500/overview-task.html">
+                    <a href = "http://127.0.0.1:5500/Front-End/overview-task.html">
                         <img src = "public/assets/img/out_overview_task.png" style = "height: 5rem; margin-top: 1.5rem;" >
                     </a>
                     <p style = "margin-top: 0.5rem; font-size: 22px;">Quay lại</p>
@@ -53,13 +53,15 @@
             <div class = "container">
                 <div class = "title_generalInfo">
                     <div class = "title_info_task">Thông tin công việc</div>
-                    <div class = "status_task">
-                        <div class = "statusdot"></div>
-                        <i class = "constain_status">Đã hoàn thành</i>
+                    <div class = "status">
+                        <!-- <div class = "status_task">
+                            <div class = "statusdot"></div>
+                            <i class = "constain_status">Đã hoàn thành</i>
+                        </div> -->
                     </div>
                 </div>
                 <div class = "detail_info">
-                    <div style = "display: flex; flex-direction: row; gap: 3rem;">
+                    <!-- <div style = "display: flex; flex-direction: row; gap: 3rem;">
                         <div class = "item_info">
                             <div class = "name_info">Mã công việc</div>
                             <div class = "contain_info">TASK00001</div>
@@ -133,12 +135,13 @@
                             <div class = "name_info">Janitor</div>
                             <div class = "contain_info">3</div>
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>
         </div>
-        
+    
+    <script type="module" src ="public/js/overview_task_detail.js"></script>  
     </body>
 
 </html>

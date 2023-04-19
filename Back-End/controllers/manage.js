@@ -13,13 +13,34 @@ const returnChart = async (req, res) => {
 };
 const returnTask = async (req, res) => {
   // res.sendFile(path.join(initialPath, "tasks-management.html"));
-  res.sendFile(path.join(initialPath, "overview-task.html"));
+  res.sendFile(path.join(initialPath, "/overviewTask/overview-task.html"));
 };
 const returnMcp = async (req, res) => {
   res.sendFile(path.join(initialPath, "mcps-management.html"));
 };
 const returnVehicle = async (req, res) => {
   res.sendFile(path.join(initialPath, "vehicles-management.html"));
+};
+
+const returnGenInfo = async (req, res) => {
+  res.sendFile(
+    path.join(
+      initialPath,
+      "/overviewTask/overview_task_detail_GeneralInfo.html"
+    )
+  );
+};
+
+const returnTaskMCP = async (req, res) => {
+  res.sendFile(
+    path.join(initialPath, "/overviewTask/overview_task_detail_MCP.html")
+  );
+};
+
+const returnTaskStaff = async (req, res) => {
+  res.sendFile(
+    path.join(initialPath, "/overviewTask/overview_task_detail_Staff.html")
+  );
 };
 
 export default {
@@ -29,4 +50,7 @@ export default {
   returnMcp,
   returnTask,
   returnVehicle,
+  returnGenInfo,
+  returnTaskMCP,
+  returnTaskStaff,
 };

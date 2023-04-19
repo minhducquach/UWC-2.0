@@ -69,7 +69,6 @@ body{
     min-width: 15rem;
     height: 2.5rem;
     background-color: #ffff;
-    border: solid 4px #90EE90;
     position: absolute;
     right: 5rem;
     display: flex;
@@ -78,8 +77,6 @@ body{
 }
 .statusdot{
     border-radius: 300px; 
-    border: solid 4px #90EE90; 
-    background-color: #00BC00;
     height: 1.4rem;
     width: 1.4rem;
     margin-left: 0.7rem;
@@ -88,7 +85,6 @@ body{
 .constain_status{
     font-size: 20px;
     margin-left: 1rem;
-    color: #008000;
 }
 .detail_info{
     display: flex;

@@ -2,24 +2,117 @@
   {
     "id": "MCP0001",
     "type": "MCP",
-    "location": "43 Le Van Duyet",
-    "coordinate": "10.800842983997603, 106.6941631280214",
+    "location": "132 Lê Văn Thọ",
+    "ward": "11",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.657142,
+      "lat": 10.844348
+    },
     "capacity": "20",
     "state": "Empty"
   },
   {
     "id": "MCP0002",
     "type": "MCP",
-    "location": "268 Li Thuong Kiet",
-    "coordinate": "10.772326574202804, 106.65801769639066",
+    "location": "435 Lê Đức Thọ",
+    "ward": "5",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.674036,
+      "lat": 10.843802
+    },
     "capacity": "20",
     "state": "Empty"
   },
   {
     "id": "MCP0003",
     "type": "MCP",
-    "location": "15 Le Loi",
-    "coordinate": "10.821157244408704, 106.68773937116462",
+    "location": "32 Nguyễn Văn Lượng",
+    "ward": "17",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.674604,
+      "lat": 10.838689
+    },
+    "capacity": "20",
+    "state": "Full"
+  },
+  {
+    "id": "MCP0004",
+    "type": "MCP",
+    "location": "1043 Lê Đức Thọ",
+    "ward": "16",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.661639,
+      "lat": 10.851777
+    },
+    "capacity": "20",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0005",
+    "type": "MCP",
+    "location": "528 Nguyễn Văn Khối",
+    "ward": "9",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.64510056071889,
+      "lat": 10.845867745852026
+    },
+    "capacity": "25",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0006",
+    "type": "MCP",
+    "location": "4 Phạm Văn Chiêu",
+    "ward": "8",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.64137847557656,
+      "lat": 10.844831683546847
+    },
+    "capacity": "18",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0007",
+    "type": "MCP",
+    "location": "86 Nguyễn Thái Sơn",
+    "ward": "3",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.68053254061681,
+      "lat": 10.816308368528626
+    },
+    "capacity": "20",
+    "state": "Full"
+  },
+  {
+    "id": "MCP0008",
+    "type": "MCP",
+    "location": "220 Nguyễn Văn Nghi",
+    "ward": "7",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.68604756142221,
+      "lat": 10.8247469417202
+    },
+    "capacity": "20",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0009",
+    "type": "MCP",
+    "location": "292 Phạm Văn Đồng",
+    "ward": "1",
+    "district": "Gò Vấp",
+    "coordinate": {
+      "lon": 106.68938413664043,
+      "lat": 10.819138710260136
+    },
     "capacity": "20",
     "state": "Empty"
   }

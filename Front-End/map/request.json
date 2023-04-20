@@ -1,0 +1,56 @@
+{
+  "vehicles": [
+    {
+      "vehicle_id": "my_vehicle",
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    }
+  ],
+  "vehicle_types": [
+    {
+      "type_id": "custom_vehicle_type",
+      "profile": "car"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "name": "1",
+      "address": {
+        "location_id": "132 Lê Văn Thọ",
+        "lon": 106.657142,
+        "lat": 10.844348
+      }
+    },
+    {
+      "id": "2",
+      "name": "2",
+      "address": {
+        "location_id": "435 Lê Đức Thọ",
+        "lon": 106.674036,
+        "lat": 10.843802
+      }
+    },
+    {
+      "id": "3",
+      "name": "3",
+      "address": {
+        "location_id": "32 Nguyễn Văn Lượng",
+        "lon": 106.674604,
+        "lat": 10.838689
+      }
+    },
+    {
+      "id": "4",
+      "name": "4",
+      "address": {
+        "location_id": "1043 Lê Đức Thọ",
+        "lon": 106.661639,
+        "lat": 10.851777
+      }
+    }
+  ]
+}

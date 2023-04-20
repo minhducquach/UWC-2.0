@@ -58,7 +58,40 @@
         "sex": "Nam"
       }
     ],
-    "route": ["43 Le Van Duyet", "21 Quang Trung", "15 Le Loi"],
+    "route": [
+      {
+        "id": "1",
+        "address": {
+          "location_id": "132 Lê Văn Thọ",
+          "lon": 106.657142,
+          "lat": 10.844348
+        }
+      },
+      {
+        "id": "2",
+        "address": {
+          "location_id": "435 Lê Đức Thọ",
+          "lon": 106.674036,
+          "lat": 10.843802
+        }
+      },
+      {
+        "id": "3",
+        "address": {
+          "location_id": "32 Nguyễn Văn Lượng",
+          "lon": 106.674604,
+          "lat": 10.838689
+        }
+      },
+      {
+        "id": "4",
+        "address": {
+          "location_id": "1043 Lê Đức Thọ",
+          "lon": 106.661639,
+          "lat": 10.851777
+        }
+      }
+    ],
     "startDate": "28/02/2023",
     "startTime": "06:00",
     "finishDate_Expected": "28/02/2023",
@@ -127,7 +160,40 @@
         "sex": "Nam"
       }
     ],
-    "route": ["43 Le Van Duyet", "21 Quang Trung", "15 Le Loi"],
+    "route": [
+      {
+        "id": "1",
+        "address": {
+          "location_id": "132 Lê Văn Thọ",
+          "lon": 106.657142,
+          "lat": 10.844348
+        }
+      },
+      {
+        "id": "2",
+        "address": {
+          "location_id": "435 Lê Đức Thọ",
+          "lon": 106.674036,
+          "lat": 10.843802
+        }
+      },
+      {
+        "id": "3",
+        "address": {
+          "location_id": "32 Nguyễn Văn Lượng",
+          "lon": 106.674604,
+          "lat": 10.838689
+        }
+      },
+      {
+        "id": "4",
+        "address": {
+          "location_id": "1043 Lê Đức Thọ",
+          "lon": 106.661639,
+          "lat": 10.851777
+        }
+      }
+    ],
     "startDate": "01/03/2023",
     "startTime": "06:00",
     "finishDate_Expected": "01/03/2023",
@@ -196,7 +262,40 @@
         "sex": "Nam"
       }
     ],
-    "route": ["43 Le Van Duyet", "21 Quang Trung", "15 Le Loi"],
+    "route": [
+      {
+        "id": "1",
+        "address": {
+          "location_id": "132 Lê Văn Thọ",
+          "lon": 106.657142,
+          "lat": 10.844348
+        }
+      },
+      {
+        "id": "2",
+        "address": {
+          "location_id": "435 Lê Đức Thọ",
+          "lon": 106.674036,
+          "lat": 10.843802
+        }
+      },
+      {
+        "id": "3",
+        "address": {
+          "location_id": "32 Nguyễn Văn Lượng",
+          "lon": 106.674604,
+          "lat": 10.838689
+        }
+      },
+      {
+        "id": "4",
+        "address": {
+          "location_id": "1043 Lê Đức Thọ",
+          "lon": 106.661639,
+          "lat": 10.851777
+        }
+      }
+    ],
     "startDate": "02/03/2023",
     "startTime": "06:00",
     "finishDate_Expected": "02/03/2023",

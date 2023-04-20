@@ -4,7 +4,7 @@ const insertIDTask = `<div class="title_list">Xem chi tiết công việc</div>
 <a href="/tasks/generalInfo?id=${taskCode}" class="item_nav">Thông tin tổng quan</a>
 <a href="./Staff?id=${taskCode}" class="item_nav">Danh sách nhân viên</a>
 <a href="./MCP?id=${taskCode}" class="item_nav" style="background-color: #007777; color: #ffff">Danh sách điểm thu gom</a>
-<a class="item_nav">Tuyến đường di chuyển</a>`;
+<a href="./route?id=${taskCode}" class="item_nav">Tuyến đường di chuyển</a>`;
 document.querySelector(".view_detail").innerHTML = insertIDTask;
 let result;
 let task = await fetch(`/tasks/getTask/${taskCode}`)

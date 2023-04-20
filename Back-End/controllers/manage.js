@@ -1,6 +1,5 @@
 import path from "path";
 import initialPath from "../helpers/initialPath.js";
-import jwt from "jsonwebtoken";
 
 const returnIndex = async (req, res) => {
   res.sendFile(path.join(initialPath, "index.html"));
@@ -47,6 +46,12 @@ const returnTaskStaff = async (req, res) => {
   );
 };
 
+const returnTaskRoute = async (req, res) => {
+  res.sendFile(
+    path.join(initialPath, "/map/map.html")
+  );
+};
+
 export default {
   returnIndex,
   returnDashboard,
@@ -58,4 +63,5 @@ export default {
   returnTaskMCP,
   returnTaskStaff,
   returnAddTask,
+  returnTaskRoute,
 };

@@ -21,4 +21,15 @@ router.post("/vehicles/addVehicle", modController.addVehicle);
 router.post("/vehicles/updateVehicle/:id", modController.updateVehicle);
 router.post("/vehicles/deleteVehicle/:id", modController.deleteVehicle);
 
+router.get("/staffs/getCollector/:id", modController.getCollector);
+router.get("/staffs/getAllCollectors", modController.getAllCollectors);
+router.post("/staffs/addCollector", modController.addCollector);
+router.post("/staffs/updateCollector/:id", modController.updateCollector);
+router.post("/staffs/deleteCollector/:id", modController.deleteCollector);
+
+router.get("/staffs/getJanitor/:id", modController.getJanitor);
+router.get("/staffs/getAllJanitors", modController.getAllJanitors);
+router.post("/staffs/addJanitor", modController.addJanitor);
+router.post("/staffs/updateJanitor/:id", modController.updateJanitor);
+router.post("/staffs/deleteJanitor/:id", modController.deleteJanitor);
 export default router;

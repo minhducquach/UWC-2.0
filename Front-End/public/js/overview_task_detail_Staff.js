@@ -11,21 +11,32 @@ let task = await fetch(`/tasks/getTask/${taskCode}`)
   .then((response) => response.json())
   .then((data) => {
     result = data;
-
   })
   .catch((error) => console.error(error));
 //Find all janitors and collectors handle this task
 let janitorIDs = [];
-result.janitor.forEach(element => {
+result.janitor.forEach((element) => {
   janitorIDs = [...janitorIDs, element.id];
 });
 let collectorIDs = [];
-result.collector.forEach(element => {
+result.collector.forEach((element) => {
   collectorIDs = [...collectorIDs, element.id];
 });
 //From the list of janitors and collectors, find their information by using Staff API
 let janitors = [];
+let jan = await fetch("/staffs/getAllJanitors")
+  .then((response) => response.json())
+  .then((data) => {
+    janitors = data;
+  })
+  .catch((error) => console.error(error));
 let collectors = [];
+let col = await fetch("/staffs/getAllCollectors")
+  .then((response) => response.json())
+  .then((data) => {
+    collectors = data;
+  })
+  .catch((error) => console.error(error));
 //TODO: API to get staff list here
 if (result) {
   var contain = ``;

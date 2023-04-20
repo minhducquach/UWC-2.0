@@ -148,6 +148,102 @@ const deleteVehicle = async (req, res) => {
     console.log("Delete vehicle successfully");
   } else res.send("Can't delete vehicle");
 };
+const getCollector = async (req, res) => {
+  const fileName = modelPath + "/collectors-data.json";
+  const Collectors = objectHandle.readJSON(fileName);
+  const CollectorID = req.params.id;
+  const result = Collectors.find(({ id }) => {
+    return id === CollectorID;
+  });
+  if (result) {
+    res.json(result);
+    console.log("Get collector successfully");
+  } else res.send("Can't find collector");
+};
+const getAllCollectors = async (req, res) => {
+  const fileName = modelPath + "/collectors-data.json";
+  const Collectors = objectHandle.readJSON(fileName);
+  if (Collectors) {
+    res.json(Collectors);
+    console.log("Get all collectors successfully");
+  } else res.send("Can't find any collector");
+};
+const addCollector = async (req, res) => {
+  const fileName = modelPath + "/collectors-data.json";
+  const newObject = req.body;
+  const result = objectHandle.createObject({ fileName, newObject });
+  if (result) {
+    res.json(newObject);
+    console.log("Add collector successfully");
+  } else res.send("Can't add collector");
+};
+const updateCollector = async (req, res) => {
+  const fileName = modelPath + "/collectors-data.json";
+  const newObject = req.body;
+  const objectID = req.params.id;
+  const result = objectHandle.modifyObject({ fileName, objectID, newObject });
+  if (result) {
+    res.json(newObject);
+    console.log("Update collector successfully");
+  } else res.send("Can't update collector");
+};
+const deleteCollector = async (req, res) => {
+  const fileName = modelPath + "/collectors-data.json";
+  const objectID = req.params.id;
+  const result = objectHandle.removeObject({ fileName, objectID });
+  if (result) {
+    res.send("Deleted");
+    console.log("Delete collector successfully");
+  } else res.send("Can't delete collector");
+};
+const getJanitor = async (req, res) => {
+  const fileName = modelPath + "/janitors-data.json";
+  const Janitors = objectHandle.readJSON(fileName);
+  const JanitorID = req.params.id;
+  const result = Janitors.find(({ id }) => {
+    return id === JanitorID;
+  });
+  if (result) {
+    res.json(result);
+    console.log("Get janitor successfully");
+  } else res.send("Can't find janitor");
+};
+const getAllJanitors = async (req, res) => {
+  const fileName = modelPath + "/janitors-data.json";
+  const Janitors = objectHandle.readJSON(fileName);
+  if (Janitors) {
+    res.json(Janitors);
+    console.log("Get all janitors successfully");
+  } else res.send("Can't find any janitor");
+};
+const addJanitor = async (req, res) => {
+  const fileName = modelPath + "/janitors-data.json";
+  const newObject = req.body;
+  const result = objectHandle.createObject({ fileName, newObject });
+  if (result) {
+    res.json(newObject);
+    console.log("Add janitor successfully");
+  } else res.send("Can't add janitor");
+};
+const updateJanitor = async (req, res) => {
+  const fileName = modelPath + "/janitors-data.json";
+  const newObject = req.body;
+  const objectID = req.params.id;
+  const result = objectHandle.modifyObject({ fileName, objectID, newObject });
+  if (result) {
+    res.json(newObject);
+    console.log("Update janitor successfully");
+  } else res.send("Can't update janitor");
+};
+const deleteJanitor = async (req, res) => {
+  const fileName = modelPath + "/janitors-data.json";
+  const objectID = req.params.id;
+  const result = objectHandle.removeObject({ fileName, objectID });
+  if (result) {
+    res.send("Deleted");
+    console.log("Delete janitor successfully");
+  } else res.send("Can't delete janitor");
+};
 
 export default {
   getTask,
@@ -165,4 +261,14 @@ export default {
   addVehicle,
   updateVehicle,
   deleteVehicle,
+  getCollector,
+  getAllCollectors,
+  addCollector,
+  updateCollector,
+  deleteCollector,
+  getJanitor,
+  getAllJanitors,
+  addJanitor,
+  updateJanitor,
+  deleteJanitor,
 };

@@ -61,19 +61,20 @@ if (result) {
         </div>
         <div class = "item_info">
             <div class = "name_info">Kết thúc (dự kiến)</div>
-            <div class = "contain_info">${result.finishDate_Expected}</div>
-            <div class = "contain_info">${result.finishTime_Expected}</div>
+            <div class = "contain_info">${result.startDate}</div>
+            <div class = "contain_info">${result.endTime}</div>
         </div>
         <div class = "item_info">
             <div class = "name_info">Kết thúc (thực tế)</div>
-            <div class = "contain_info">${result.finishDate_Reality}</div>
-            <div class = "contain_info">${result.finishTime_Reality}</div>
+            <div class = "contain_info">${result.startDate}</div>
+            <div class = "contain_info">${result.checkoutTime}</div>
+            
         </div>
     </div>
     <div style = "display: flex; flex-direction: row; gap: 3rem;">
         <div class = "item_info">
             <div class = "name_info">Khu vực</div>
-            <div class = "contain_info">${result.collector[0].district}</div>
+            <div class = "contain_info">Quận Gò Vấp</div>
         </div>
         <div class = "item_info">
             <div class = "name_info">Phương tiện sử dụng</div>
@@ -87,16 +88,15 @@ if (result) {
     <div style = "display: flex; flex-direction: row; gap: 3rem;">
         <div class = "item_info">
             <div class = "name_info">Số điểm thu gom</div>
-            <div class = "contain_info">${result.residential_area + result.industrial_area
-        }</div>
+            <div class = "contain_info">${result.route.length}</div>
         </div>
         <div class = "item_info"> 
             <div class = "name_info">Khu dân cư</div>
-            <div class = "contain_info">${result.residential_area}</div>
+            <div class = "contain_info">${result.route.length}</div>
         </div>
         <div class = "item_info">
             <div class = "name_info">Khu công nghiệp</div>
-            <div class = "contain_info">${result.industrial_area}</div>
+            <div class = "contain_info">0</div>
         </div>
     </div>
     <div style = "display: flex; flex-direction: row; gap: 3rem;">

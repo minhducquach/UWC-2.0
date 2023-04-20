@@ -56,6 +56,8 @@
     ],
     "startDate": "2023/01/01",
     "startTime": "18:00",
+    "endTime": "19:00",
+    "checkoutTime": "18:55",
     "state": "2"
   },
   {
@@ -120,6 +122,8 @@
     ],
     "startDate": "2023/01/02",
     "startTime": "20:00",
+    "endTime": "21:30",
+    "checkoutTime": "21:14",
     "state": "2"
   },
   {
@@ -184,6 +188,8 @@
     ],
     "startDate": "2023/01/04",
     "startTime": "21:15",
+    "endTime": "23:30",
+    "checkoutTime": "23:38",
     "state": "0"
   }
 ]

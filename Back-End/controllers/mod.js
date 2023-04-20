@@ -19,6 +19,8 @@ const getAllTasks = async (req, res) => {
   const Tasks = objectHandle.readJSON(fileName);
   if (Tasks) {
     res.json(Tasks);
+    // res.send(JSON.stringify(Tasks));
+    console.log(Tasks);
     console.log("Get all tasks successfully");
   } else res.send("Can't find any task");
 };

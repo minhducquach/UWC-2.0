@@ -2,15 +2,113 @@
     {
       "id": "CO0001",
       "phone": "091765212",
-      "address": "157 Nguyen Oanh",
+      "address": "157 Nguyễn Oanh",
       "ward": "1",
-      "district": "Go Vap"
+      "district": "Gò Vấp"
     },
     {
       "id": "CO0002",
       "phone": "091765212",
-      "address": "30 Nguyen Oanh",
+      "address": "30 NguyễnOanh",
       "ward": "1",
-      "district": "Go Vap"
+      "district": "Gò Vấp"
+    },
+    {
+      "id": "CO0003",
+      "phone": "091765212",
+      "address": "528 Nguyễn Văn Khối",
+      "ward": "9",
+      "district": "Gò Vấp"
+    },
+    {
+      "id": "CO0004",
+      "phone": "091765212",
+      "address": "530 Nguyễn Văn Khối",
+      "ward": "9",
+      "district": "Gò Vấp"
+    },
+    {
+      "id": "CO0005",
+      "phone": "091765212",
+      "address": "557 Nguyễn Văn Khối",
+      "ward": "8",
+      "district": "Gò Vấp"
+    },
+    {
+      "id": "CO0006",
+      "phone": "091765212",
+      "address": "588 Nguyễn Văn Quá",
+      "ward": "Đông Hưng Thuận",
+      "district": "12"
+    },
+    {
+      "id": "CO0007",
+      "phone": "091765212",
+      "address": "590 Nguyễn Văn Quá",
+      "ward": "Đông Hưng Thuận",
+      "district": "12"
+    },
+    {
+      "id": "CO0008",
+      "phone": "091765212",
+      "address": "40 QL1A",
+      "ward": "Thới An",
+      "district": "12"
+    },
+    {
+      "id": "CO0009",
+      "phone": "091765212",
+      "address": "42 QL1A",
+      "ward": "Thới An",
+      "district": "12"
+    },
+    {
+      "id": "CO0010",
+      "phone": "091765212",
+      "address": "100 Vườn Lài",
+      "ward": "An Phú Đông",
+      "district": "12"
+    },
+    {
+      "id": "CO0011",
+      "phone": "091765212",
+      "address": "102 Vườn Lài",
+      "ward": "An Phú Đông",
+      "district": "12"
+    },
+    {
+      "id": "CO0012",
+      "phone": "091765212",
+      "address": "124 Phan Đăng Lưu",
+      "ward": "3",
+      "district": "Phú Nhuận"
+    },
+    {
+      "id": "CO0013",
+      "phone": "091765212",
+      "address": "126 Phan Đăng Lưu",
+      "ward": "3",
+      "district": "Phú Nhuận"
+    },
+    {
+      "id": "CO0014",
+      "phone": "091765212",
+      "address": "300 Phan Xích Long",
+      "ward": "1",
+      "district": "Phú Nhuận"
+    },
+    {
+      "id": "CO0015",
+      "phone": "091765212",
+      "address": "351 Phan Xích Long",
+      "ward": "1",
+      "district": "Phú Nhuận"
+    },
+    {
+      "id": "CO0016",
+      "phone": "091765212",
+      "address": "5 Thích Quảng Đức",
+      "ward": "5",
+      "district": "Phú Nhuận"
     }
   ]

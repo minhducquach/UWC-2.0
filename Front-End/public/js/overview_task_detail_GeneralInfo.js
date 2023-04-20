@@ -1,5 +1,5 @@
 console.log(window.location.search);
-const taskCode = window.location.search.substring(4, 12);
+const taskCode = new URLSearchParams(window.location.search).get('id');
 const insertIDTask = `<div class="title_list">Xem chi tiết công việc</div>
 <a
   href="/tasks/generalInfo?id=${taskCode}" class="item_nav" style= "background-color: #007777; color: #ffff;">Thông tin tổng quan</a>

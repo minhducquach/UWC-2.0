@@ -142,12 +142,14 @@ function renderTable(start) {
             <td>${task.startDate}</td>
             <td>${task.startTime}</td>
             <td>${task.finishTime_Expected}</td>`;
-    if (task.status === 0) {
+    if (task.state === "0") {
       html += `<td class="incompleted-task">Chưa hoàn thành</td>`;
-    } else if (task.status === 1) {
+    } 
+    else if (task.state === "2") {
       html += `<td class="completed-task">Đã hoàn thành</td>`;
-    } else {
-      html += `<td class="waiting-task">Chờ thực hiện</td>`;
+    } 
+    else {
+      html += `<td class="waiting-task">Đang tiến hành</td>`;
     }
     html += `<td><button class="btn btn-secondary" data-taskid="${task.id}">Xem</button></td>
         </tr > `;

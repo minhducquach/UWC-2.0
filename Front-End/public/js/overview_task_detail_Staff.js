@@ -2,7 +2,7 @@ console.log(window.location.search);
 const taskCode = window.location.search.substring(4, 12);
 const insertIDTask = `<div class="title_list">Xem chi tiết công việc</div>
 <a href="/tasks/generalInfo?id=${taskCode}" class="item_nav">Thông tin tổng quan</a>
-<a href="./Staff?id=${taskCode}" class="item_nav" style="background-color: #007777; color: #ffff">Danh sách nhân viên</a>
+<a href="/tasks/Staff?id=${taskCode}" class="item_nav" style="background-color: #007777; color: #ffff">Danh sách nhân viên</a>
 <a href="./MCP?id=${taskCode}" class="item_nav">Danh sách điểm thu gom</a>
 <a class="item_nav">Tuyến đường di chuyển</a>`;
 document.querySelector(".view_detail").innerHTML = insertIDTask;
@@ -11,9 +11,22 @@ let task = await fetch(`/tasks/getTask/${taskCode}`)
   .then((response) => response.json())
   .then((data) => {
     result = data;
+
   })
   .catch((error) => console.error(error));
-
+//Find all janitors and collectors handle this task
+let janitorIDs = [];
+result.janitor.forEach(element => {
+  janitorIDs = [...janitorIDs, element.id];
+});
+let collectorIDs = [];
+result.collector.forEach(element => {
+  collectorIDs = [...collectorIDs, element.id];
+});
+//From the list of janitors and collectors, find their information by using Staff API
+let janitors = [];
+let collectors = [];
+//TODO: API to get staff list here
 if (result) {
   var contain = ``;
   contain = "Điểm thu gom " + result.id;
@@ -30,14 +43,14 @@ if (result) {
         <th class = "info_item">SĐT</th>
         <th class = "info_item">Phương tiện</th>
     </tr>`;
-  for (let i = 0; i < result.janitor.length; i++) {
+  for (let i = 0; i < janitors.length; i++) {
     contain += `<tr class = "info_row">
             <td class = "info_item">${i + 1}</td>
-            <td class = "info_item">${result.janitor[i].name}</td>
-            <td class = "info_item">${result.janitor[i].staffID}</td>
-            <td class = "info_item">${result.janitor[i].sex}</td>
-            <td class = "info_item">${result.janitor[i].phone}</td>
-            <td class = "info_item">${result.janitor[i].vehicle}</td>
+            <td class = "info_item">${janitors[i].name}</td>
+            <td class = "info_item">${janitors[i].id}</td>
+            <td class = "info_item">${janitors[i].sex}</td>
+            <td class = "info_item">${janitors[i].phone}</td>
+            <td class = "info_item">${janitors[i].vehicle}</td>
         </tr>`;
   }
   contain += `</table>
@@ -53,14 +66,14 @@ if (result) {
                 <th class = "info_item">SĐT</th>
                 <th class = "info_item">Phương tiện</th>
             </tr>`;
-  for (let i = 0; i < result.collector.length; i++) {
+  for (let i = 0; i < collectors.length; i++) {
     contain += `<tr class = "info_row">
             <td class = "info_item">${i + 1}</td>
-            <td class = "info_item">${result.janitor[i].name}</td>
-            <td class = "info_item">${result.janitor[i].staffID}</td>
-            <td class = "info_item">${result.janitor[i].sex}</td>
-            <td class = "info_item">${result.janitor[i].phone}</td>
-            <td class = "info_item">${result.janitor[i].vehicle}</td>
+            <td class = "info_item">${collectors[i].name}</td>
+            <td class = "info_item">${collectors[i].id}</td>
+            <td class = "info_item">${collectors[i].sex}</td>
+            <td class = "info_item">${collectors[i].phone}</td>
+            <td class = "info_item">${collectors[i].vehicle}</td>
         </tr>`;
   }
   contain += `</table>

@@ -13,10 +13,35 @@ let task = await fetch(`/tasks/getTask/${taskCode}`)
     result = data;
   })
   .catch((error) => console.error(error));
+let janitorIDs = [];
+let mcpIDs = [];
+result.janitor.forEach((element) => {
+  janitorIDs = [...janitorIDs, element.id];
+  mcpIDs = [...mcpIDs, element.mcp];
+});
+//From the list of janitors and collectors, find their information by using Staff API
+let janitors = [];
+let jan = await fetch("/staffs/getAllJanitors")
+  .then((response) => response.json())
+  .then((data) => {
+    janitors = data;
+  })
+  .catch((error) => console.error(error));
+//Filter out the janitors who are not in this task
+janitors = janitors.filter((janitor) => janitorIDs.includes(janitor.id));
 
+let mcps = [];
+let mcp = await fetch("/mcps/getAllMCPs")
+  .then((response) => response.json())
+  .then((data) => {
+    mcps = data;
+  })
+  .catch((error) => console.error(error));
+mcps = mcps.filter((mcp) => mcpIDs.includes(mcp.id));
+console.log(mcps);
 if (result) {
   var contain = ``;
-  contain = "Điểm thu gom " + result.id;
+  contain = "Các điểm thu gom " + result.id;
   document.querySelector(".title_info_task").innerHTML = contain;
   contain = `<tr class = "info_row">
 <th class ="info_item">STT</th>
@@ -29,15 +54,11 @@ if (result) {
   for (let i = 0; i < result.janitor.length; i++) {
     contain += `<tr class = "info_row">
     <td class ="info_item">${i + 1}</td>
-    <td class ="info_item">${
-      result.janitor[i].mcp + ", " + result.collector[0].district
-    }</td>
-    <td class ="info_item">${result.janitor[i].id_mcp}</td>
-    <td class ="info_item">${
-      result.startDate + " " + result.janitor[i].time
-    }</td>
-    <td class ="info_item">${result.janitor[i].name}</td>
-    <td class ="info_item">${result.janitor[i].staffID}</td>
+    <td class ="info_item">${mcps[i].location + ", P." + mcps[i].ward + ", Q." + mcps[i].district}</td>
+    <td class ="info_item">${mcps[i].id}</td>
+    <td class ="info_item">${result.startDate}</td>
+    <td class ="info_item">${janitors[i].name}</td>
+    <td class ="info_item">${janitors[i].id}</td>
 </tr>`;
   }
   document.querySelector(".info_table").innerHTML = contain;

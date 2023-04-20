@@ -10,7 +10,7 @@
   },
   {
     "id": "JN0002",
-    "name": "Trần Văn A",
+    "name": "Trần Văn B",
     "sex": "Nam",
     "phone": "077765212",
     "address": "9 Nguyen Oanh",
@@ -19,7 +19,7 @@
   },
   {
     "id": "JN0003",
-    "name": "Trần Văn A",
+    "name": "Trần Văn C",
     "sex": "Nam",
     "phone": "022765212",
     "address": "9 Nguyen Van Luong",
@@ -28,7 +28,7 @@
   },
   {
     "id": "JN0004",
-    "name": "Trần Văn A",
+    "name": "Trần Văn D",
     "sex": "Nam",
     "phone": "011765212",
     "address": "9/12 Thong Nhat",
@@ -37,7 +37,7 @@
   },
   {
     "id": "JN0005",
-    "name": "Trần Văn A",
+    "name": "Trần Văn E",
     "sex": "Nam",
     "phone": "033765212",
     "address": "93 Nguyen Oanh",

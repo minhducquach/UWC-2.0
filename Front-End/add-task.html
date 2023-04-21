@@ -15,8 +15,10 @@
       rel="stylesheet"
     />
     <link href="../css/styles.css" rel="stylesheet" />
+    <!--<link href="./styles.css" rel="stylesheet" /> -->
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../css/add-task.css" />
+    <!--<link rel="stylesheet" href="./add-task.css" /> -->
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
@@ -43,102 +45,93 @@
                   <label for="startTime" class="form-label">Start Time:</label>
                   <input type="datetime-local" 
                          class="form-control" 
-                         id="startTime" 
+                         id="start-time" 
                          name="startTime">
+
                 </div>
                 <div class="form-group">
                   <label for="endTime" class="form-label">End Time:</label>
                   <input type="datetime-local" 
                          class="form-control" 
-                         id="endTime" 
+                         id="end-time" 
                          name="endTime">
                 </div>
+ <!--Area-->
                 <div class="form-group">
-                  <label for="area" class="form-label">Area:</label>
-                  <select
-                    data-placeholder="Select areas"
-                    multiple
-                    class="chosen-select form-control"
-                    name="area"
-                  >
-                    <option value=""></option>
-                    <option value="Downtown">Downtown</option>
-                    <option value="Uptown">Uptown</option>
-                    <option value="East Side">East Side</option>
-                  </select>
+                  <label for="area'" class="form-label">Area:</label>
+                  <select id="area"
+                          data-placeholder="Select Area"
+                          multiple
+                          class="chosen-select form-control"
+                          name="area">
+                          <script>
+                            src="./taskselect.js"
+                          </script>   
+                          <option value="default">Select a Area</option>
+                </select>  
+                    
                 </div>
+ <!--MCPs-->    
                 <div class="form-group">
-                  <label for="mcp" class="form-label">MCP:</label>
-                  <select
-                    data-placeholder="Select MCPs"
-                    multiple
-                    class="chosen-select form-control"
-                    name="mcp"
-                  >
-                    <option value=""></option>
-                    <option value="MCP001">MCP001</option>
-                    <option value="MCP002">MCP002</option>
-                    <option value="MCP003">MCP003</option>
+                    <label for="area" class="form-label">MCPs:</label>
+                    <select id="mcps"
+                            data-placeholder="Select MCPs"
+                            multiple
+                            class="chosen-select form-control"
+                            name="mcps">
+                            <option value="">Select a MCP</option>
                   </select>
-                </div>
+                  </div>
+ <!--Trolleys-->                  
+                  <div class="form-group">
+                    <label for="area" class="form-label">Trolleys:</label>
+                    <select id="trolleys"
+                            data-placeholder="Select Trolleys"
+                            multiple
+                            class="chosen-select form-control"
+                            name="trolleys">
+                            <option value="">Select a Trolley</option>
+                  </select>
+                  </div>
+ <!--Janitor -->                  
                 <div class="form-group">
-                  <label for="trolley" class="form-label">Trolley:</label>
-                  <select
-                    data-placeholder="Select trolleys"
-                    multiple
-                    class="chosen-select form-control"
-                    name="trolley"
-                  >
-                    <option value=""></option>
-                    <option value="Truck">Truck</option>
-                    <option value="Van">Van</option>
-                    <option value="SUV">SUV</option>
-                  </select>
+                  <label for="area" class="form-label">Janitor:</label>
+                  <select id="janitors"
+                          data-placeholder="Select Janitors"
+                          multiple
+                          class="chosen-select form-control"
+                          name="janitors">
+                          <option value="">Select a Janitor</option>
+                </select>
                 </div>
+ <!-- Trucks -->
                 <div class="form-group">
-                  <label for="janitor" class="form-label">Janitor:</label>
-                  <select
-                    data-placeholder="Select janitors"
-                    multiple
-                    class="chosen-select form-control"
-                    name="janitor"
-                  >
-                    <option value=""></option>
-                    <option value="Bill">Bill</option>
-                    <option value="Sue">Sue</option>
-                    <option value="Tom">Tom</option>
-                  </select>
+                  <label for="area" class="form-label">Trucks:</label>
+                  <select id="trucks"
+                          data-placeholder="Select Trucks"
+                          multiple
+                          class="chosen-select form-control"
+                          name="trucks">
+                          <option value="">Select a Truck</option>
+                </select>
                 </div>
+ <!--Collectors -->
                 <div class="form-group">
-                  <label for="truck" class="form-label">Truck:</label>
-                  <select
-                    data-placeholder="Select trucks"
-                    multiple
-                    class="chosen-select form-control"
-                    name="truck"
-                  >
-                    <option value=""></option>
-                    <option value="Truck">Truck</option>
-                    <option value="Van">Van</option>
-                    <option value="SUV">SUV</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="collector" class="form-label">Collector:</label>
-                  <select
-                    data-placeholder="Select collectors"
-                    multiple
-                    class="chosen-select form-control"
-                    name="collector"
-                  >
-                    <option value=""></option>
-                    <option value="John">John</option>
-                    <option value="Mary">Mary</option>
-                    <option value="Peter">Peter</option>
-                  </select>
-                </div>
-                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                    <label for="area" class="form-label">Collectors:</label>
+                    <select id="collectors"
+                            data-placeholder="Select Collectors"
+                            multiple
+                            class="chosen-select form-control"
+                            name="collectors">
+                            <option value="">Select a Janitor</option>
+                    </select>
+                  </div>
+<!--Buttons -->                  
+                <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">Submit</button>
               </form>
+              <script>
+                src="./taskselect.js"
+              </script>
             </div>
           </div>
         </main>
@@ -172,6 +165,11 @@
       src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
       crossorigin="anonymous"
     ></script>
+    <!--<script src="./datatables-simple-demo.js"></script>-->
+    <!-- <script src="../js/task-list.js"></script> -->
+   <!-- <script src="./sidebar.js"></script>
+    <script src="./navbar.js"></script>
+    <script src="./hide-side-bar.js"></script> -->
     <script src="../js/datatables-simple-demo.js"></script>
     <!-- <script src="../js/task-list.js"></script> -->
     <script src="../components/sidebar.js"></script>

@@ -1,26 +1,30 @@
 [
-    {
-      "id": "0",
-      "username": "admin",
-      "password": "123456",
-      "role": "admin"
-    },
-    {
-      "id": "BO0001",
-      "username": "backofficer",
-      "password": "123456",
-      "role": "admin"
-    },
-    {
-      "id": "JN0001",
-      "username": "janitor",
-      "password": "123456",
-      "role": "janitor"
-    },
-    {
-      "id": "CO0001",
-      "username": "collector",
-      "password": "123456",
-      "role": "collector"
-    }
-  ]
+  {
+    "id": "AD0000",
+    "name": "Admin",
+    "username": "admin",
+    "password": "123456",
+    "role": "admin"
+  },
+  {
+    "id": "BO0001",
+    "name": "Nguyen Thi Bach Khoa",
+    "username": "backofficer",
+    "password": "123456",
+    "role": "backofficer"
+  },
+  {
+    "id": "JN0001",
+    "name": "Pham Thi Bach Khoa",
+    "username": "janitor",
+    "password": "123456",
+    "role": "janitor"
+  },
+  {
+    "id": "CO0001",
+    "name": "Le Thi Bach Khoa",
+    "username": "collector",
+    "password": "123456",
+    "role": "collector"
+  }
+]

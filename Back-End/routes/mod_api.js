@@ -32,4 +32,10 @@ router.get("/staffs/getAllJanitors", modController.getAllJanitors);
 router.post("/staffs/addJanitor", modController.addJanitor);
 router.post("/staffs/updateJanitor/:id", modController.updateJanitor);
 router.post("/staffs/deleteJanitor/:id", modController.deleteJanitor);
+
+router.get("/users/getUser/:id", modController.getUser);
+router.get("/users/getAllUsers", modController.getAllUsers);
+router.post("/users/addUser", modController.addUser);
+router.post("/users/updateUser/:id", modController.updateUser);
+router.post("/users/deleteUser/:id", modController.deleteUser);
 export default router;

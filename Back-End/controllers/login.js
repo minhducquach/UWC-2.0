@@ -24,6 +24,7 @@ const login = async (req, res, next) => {
     let token = jwt.sign({ data: result }, process.env.JWT_SECRET);
     req.token = token;
     req.role = result.role;
+    req.id = result.id;
     next();
     // const message = { ...result, password: "hide", token: token };
     // res.json(message);

@@ -2,6 +2,7 @@
   {
     "id": "TASK0001",
     "description": "Dọn rác khu vực quận Gò Vấp",
+    "createdBy": "BO0001",
     "janitor": [
       {
         "id": "JN0001",
@@ -63,6 +64,7 @@
   {
     "id": "TASK0002",
     "description": "Dọn rác khu vực quận Gò Vấp II",
+    "createdBy": "BO0001",
     "janitor": [
       {
         "id": "JN0003",
@@ -129,6 +131,7 @@
   {
     "id": "TASK0003",
     "description": "Dọn rác khu vực quận Gò Vấp III",
+    "createdBy": "BO0001",
     "janitor": [
       {
         "id": "JN0006",

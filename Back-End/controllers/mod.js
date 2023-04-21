@@ -244,7 +244,54 @@ const deleteJanitor = async (req, res) => {
     console.log("Delete janitor successfully");
   } else res.send("Can't delete janitor");
 };
-
+const getUser = async (req, res) => {
+  const fileName = modelPath + "/users-data.json";
+  const Users = objectHandle.readJSON(fileName);
+  const UserID = req.params.id;
+  const result = Users.find(({ id }) => {
+    return id === UserID;
+  });
+  if (result) {
+    res.json(result);
+    console.log("Get user successfully");
+  } else res.send("Can't find user");
+};
+const getAllUsers = async (req, res) => {
+  const fileName = modelPath + "/users-data.json";
+  const Users = objectHandle.readJSON(fileName);
+  if (Users) {
+    res.json(Users);
+    console.log("Get all users successfully");
+  } else res.send("Can't find any user");
+};
+const addUser = async (req, res) => {
+  const fileName = modelPath + "/users-data.json";
+  const newObject = req.body;
+  const result = objectHandle.createObject({ fileName, newObject });
+  if (result) {
+    res.json(newObject);
+    console.log("Add user successfully");
+  } else res.send("Can't add user");
+};
+const updateUser = async (req, res) => {
+  const fileName = modelPath + "/users-data.json";
+  const newObject = req.body;
+  const objectID = req.params.id;
+  const result = objectHandle.modifyObject({ fileName, objectID, newObject });
+  if (result) {
+    res.json(newObject);
+    console.log("Update user successfully");
+  } else res.send("Can't update user");
+};
+const deleteUser = async (req, res) => {
+  const fileName = modelPath + "/users-data.json";
+  const objectID = req.params.id;
+  const result = objectHandle.removeObject({ fileName, objectID });
+  if (result) {
+    res.send("Deleted");
+    console.log("Delete user successfully");
+  } else res.send("Can't delete user");
+};
 export default {
   getTask,
   getAllTasks,
@@ -271,4 +318,9 @@ export default {
   addJanitor,
   updateJanitor,
   deleteJanitor,
+  getUser,
+  getAllUsers,
+  addUser,
+  updateUser,
+  deleteUser,
 };

@@ -54,7 +54,13 @@ if (result) {
   for (let i = 0; i < result.janitor.length; i++) {
     contain += `<tr class = "info_row">
     <td class ="info_item">${i + 1}</td>
-    <td class ="info_item">${mcps[i].location + ", P." + mcps[i].ward + ", Q." + mcps[i].district}</td>
+    <td class ="info_item">${
+      mcps[i].address.location_id +
+      ", P." +
+      mcps[i].ward +
+      ", Q." +
+      mcps[i].district
+    }</td>
     <td class ="info_item">${mcps[i].id}</td>
     <td class ="info_item">${result.startDate}</td>
     <td class ="info_item">${janitors[i].name}</td>

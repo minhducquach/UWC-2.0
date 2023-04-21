@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
     return "";
   }
-  const role = getCookie("role");
+  const id = getCookie("id");
   $("#layoutSidenav").prepend(
     `<div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -45,7 +45,7 @@ $(document).ready(function () {
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    ${role}
+                    ${id}
                 </div>
             </nav>
         </div>`

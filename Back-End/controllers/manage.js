@@ -47,9 +47,7 @@ const returnTaskStaff = async (req, res) => {
 };
 
 const returnTaskRoute = async (req, res) => {
-  res.sendFile(
-    path.join(initialPath, "/map/map.html")
-  );
+  res.sendFile(path.join(initialPath, "/map/map.html"));
 };
 
 export default {

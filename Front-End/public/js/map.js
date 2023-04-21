@@ -1,4 +1,6 @@
 //select block
+import mapUtil from "./map_util.js";
+
 console.log(window.location.search);
 const taskCode = window.location.search.substring(4, 12);
 console.log(taskCode);
@@ -20,7 +22,7 @@ let vehicle = await fetch(`/vehicles/getVehicle/${vehicle_id}`)
   })
   .catch((error) => console.error(error));
 
-async function getRoute(query) {}
+// async function getRoute(query) {}
 
 const create_route_btn = document.getElementById("get-route");
 
@@ -51,42 +53,5 @@ $(document).ready(function () {
     attribution:
       '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(mapObj);
-
-  create_route_btn.addEventListener("click", async (e) => {
-    const API_KEY_GRAPHOPPER = "da71e902-9d76-4831-8cd2-c87d94403240";
-    const query = new URLSearchParams({
-      key: API_KEY_GRAPHOPPER,
-    }).toString();
-
-    const resp = await fetch(`https://graphhopper.com/api/1/vrp?${query}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dataRoute),
-    });
-
-    const data = await resp.json();
-    let latlngs = [];
-    if (data.solution) {
-      data.solution.routes[0].activities.forEach((element) => {
-        if (element.type != "end") {
-          latlngs.push(L.latLng([element.address.lat, element.address.lon]));
-        }
-      });
-      latlngs.forEach((e, index) => {
-        var marker = new L.Marker(e, {
-          icon: new L.NumberedDivIcon({ number: `${index}` }),
-        }).addTo(mapObj);
-      });
-      L.Routing.control({
-        waypoints: latlngs,
-        createMarker: function () {
-          return null;
-        },
-      }).addTo(mapObj);
-      var featureGroup = L.featureGroup(latlngs).addTo(mapObj);
-      mapObj.fitBounds(featureGroup.getBounds());
-    }
-  });
+  mapUtil.getRoute(mapObj, dataRoute);
 });

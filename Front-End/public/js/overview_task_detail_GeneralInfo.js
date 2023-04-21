@@ -1,5 +1,7 @@
+import mapUtil from "./map_util.js";
+
 console.log(window.location.search);
-const taskCode = new URLSearchParams(window.location.search).get('id');
+const taskCode = new URLSearchParams(window.location.search).get("id");
 const insertIDTask = `<div class="title_list">Xem chi tiết công việc</div>
 <a
   href="/tasks/generalInfo?id=${taskCode}" class="item_nav" style= "background-color: #007777; color: #ffff;">Thông tin tổng quan</a>
@@ -10,42 +12,73 @@ document.querySelector(".view_detail").innerHTML = insertIDTask;
 
 let result;
 let task = await fetch(`/tasks/getTask/${taskCode}`)
-    .then((response) => response.json())
-    .then((data) => {
-        result = data;
-    })
-    .catch((error) => console.error(error));
+  .then((response) => response.json())
+  .then((data) => {
+    result = data;
+  })
+  .catch((error) => console.error(error));
+
+let BO_data;
+let BO = await fetch(`/users/getUser/${result.createdBy}`)
+  .then((response) => response.json())
+  .then((data) => {
+    BO_data = data;
+  })
+  .catch((error) => console.error(error));
+
+//Get distance
+let vehicle_id = result.collector[0].vehicle;
+let vehicle_data;
+let vehicle = await fetch(`/vehicles/getVehicle/${vehicle_id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    vehicle_data = data;
+  })
+  .catch((error) => console.error(error));
+
+const dataRoute = {
+  vehicles: [
+    {
+      vehicle_id: vehicle_data.id,
+      start_address: vehicle_data.vehicle_info.start_address,
+    },
+  ],
+  vehicle_types: [{ type_id: "custom_vehicle_type", profile: "car" }],
+  services: result.route,
+};
+
+let distance = await mapUtil.getDistance(dataRoute);
 
 if (result) {
-    var contain = ``;
-    if (result.state === "2") {
-        contain = `<div class = "status_task" style = "border: solid 4px #90EE90;">
+  var contain = ``;
+  if (result.state === "2") {
+    contain = `<div class = "status_task" style = "border: solid 4px #90EE90;">
             <div class = "statusdot" style = "border: solid 4px #90EE90; background-color: #00BC00;"></div>
             <i class = "constain_status" style = "color: #008000;">Đã hoàn thành</i>
         </div>`;
-    } else if (result.state === "1") {
-        contain = `<div class = "status_task" style = "border: solid 4px #eeee90;">
+  } else if (result.state === "1") {
+    contain = `<div class = "status_task" style = "border: solid 4px #eeee90;">
             <div class = "statusdot" style = "border: solid 4px #eeee90; background-color: #bcbc00;"></div>
             <i class = "constain_status" style = "color: #7a8000;">Đang tiến hành</i>
         </div>`;
-    } else {
-        contain = `<div class = "status_task" style = "border: solid 4px #ee9090;">
+  } else {
+    contain = `<div class = "status_task" style = "border: solid 4px #ee9090;">
             <div class = "statusdot" style = "border: solid 4px #ee9090; background-color: #bc0000;"></div>
             <i class = "constain_status" style = "color: #800000;">Chưa hoàn thành</i>
         </div>`;
-    }
-    document.querySelector(".status").innerHTML = contain;
-    var numJanitor = result.janitor.length;
-    var numCollector = result.collector.length;
-    contain = `<div style = "display: flex; flex-direction: row; gap: 3rem;">
+  }
+  document.querySelector(".status").innerHTML = contain;
+  var numJanitor = result.janitor.length;
+  var numCollector = result.collector.length;
+  contain = `<div style = "display: flex; flex-direction: row; gap: 3rem;">
         <div class = "item_info">
             <div class = "name_info">Mã công việc</div>
             <div class = "contain_info">${result.id}</div>
         </div>
         <div class = "item_info">
             <div class = "name_info">Người khởi tạo</div>
-            <div class = "contain_info">Nguyễn Thị Bách Khoa</div>
-            <div class = "contain_info">BO001</div>
+            <div class = "contain_info">${BO_data.name}</div>
+            <div class = "contain_info">${BO_data.id}</div>
         </div>
         <div class = "item_info">
             <div class = "name_info">Ngày khởi tạo</div>
@@ -82,7 +115,7 @@ if (result) {
         </div>
         <div class = "item_info">
             <div class = "name_info">Quãng đường</div>
-            <div class = "contain_info">${result.distance}</div>
+            <div class = "contain_info">${distance}</div>
         </div>
     </div>
     <div style = "display: flex; flex-direction: row; gap: 3rem;">
@@ -113,5 +146,5 @@ if (result) {
             <div class = "contain_info">${numJanitor}</div>
         </div>
     </div>`;
-    document.querySelector(".detail_info").innerHTML = contain;
+  document.querySelector(".detail_info").innerHTML = contain;
 }

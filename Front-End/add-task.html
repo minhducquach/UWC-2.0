@@ -32,7 +32,7 @@
       rel="stylesheet"
     />
   </head>
-
+<!--
   <body class="sb-nav-fixed">
     <div id="layoutSidenav">
       <div id="layoutSidenav_content">
@@ -40,146 +40,149 @@
           <div class="container">
             <div class="form-block">
               <h2 class="text-center text-white mb-4">Create New Task</h2>
-         <!--     <form>
+              <form>
                 <div class="form-group">
                   <label for="startTime" class="form-label">Start Time:</label>
                   <input type="datetime-local" 
                          class="form-control" 
                          id="start-time" 
                          name="startTime">
-
+                <select id="start-time">
+                  <option value="">Select a Start Time</option>
+                </select>
+              </div>
+                <label for="end-time">End Time:</label>
+                <select id="end-time">
+                  <option value="">Select an End Time</option>
+                </select>
+                <div class="form-group">
+                  <label for="area'" class="form-label">Area:</label>
+                
+                <select id="area"
+                        data-placeholder="Select Area"
+                        multiple
+                        name="area"
+                        class="chosen-select form-control ">
+           <option value=""></option>      
+                </select>
+               </div>
+                <label for="mcps">MCPs:</label>
+                <select id="mcps">
+                  <option value="">Select a MCP</option>
+                </select>
+              
+                <label for="trolleys">Trolleys:</label>
+                <select id="trolleys">
+                  <option value="">Select a Trolley</option>
+                </select>
+              
+                <label for="collectors">Collectors:</label>
+                <select id="collectors">
+                  <option value="">Select a Collector</option>
+                </select>
+              
+                <label for="trucks">Trucks:</label>
+                <select id="trucks">
+                  <option value="">Select a Truck</option>
+                </select>
+              
+                <label for="janitors">Janitors:</label>
+                <select id="janitors">
+                  <option value="">Select a Janitor</option>
+                </select>
+              
+                <input type="submit" value="Submit">
+              </form>
+              
+              
+              
+            </div>
+          </div>
+        -->
+        <body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container">
+            <div class="form-block">
+              <h2 class="text-center text-white mb-4">Create New Task</h2>
+              <form>
+                <div class="form-group">
+                  <label for="startTime" class="form-label">Start Time:</label>
+                  <select type="datetime-local" 
+                         
+                         id="start-time" 
+                         name="startTime">
+                      <option value="default">Select start time</option>
+                      </select>
                 </div>
                 <div class="form-group">
                   <label for="endTime" class="form-label">End Time:</label>
-                  <input type="datetime-local" 
-                         class="form-control" 
+                  <select type="datetime-local" 
                          id="end-time" 
                          name="endTime">
+                    <option value="default">Select end time</option>
+                    </select>
                 </div>
- Area
+ <!--Area-->
                 <div class="form-group">
                   <label for="area'" class="form-label">Area:</label>
-                  <select id="area"
-                          data-placeholder="Select Area"
-                          multiple
-                          class="chosen-select form-control"
-                          name="area">
-                          <option value="default">Select a Area</option>
-                </select>  
+                  <select 
+                         id="area" 
+                         name="area">
+                    <option value="default">Select area</option>
+                    </select>
                     
                 </div>
-    
+ <!--MCPs-->    
                 <div class="form-group">
                     <label for="area" class="form-label">MCPs:</label>
-                    <select id="mcps"
-                            data-placeholder="Select MCPs"
-                            multiple
-                            class="chosen-select form-control"
-                            name="mcps">
-                            <option value="">Select a MCP</option>
-                  </select>
-                  </div>
-               
-                  <div class="form-group">
-                    <label for="area" class="form-label">Trolleys:</label>
-                    <select id="trolleys"
-                            data-placeholder="Select Trolleys"
-                            multiple
-                            class="chosen-select form-control"
-                            name="trolleys">
-                            <option value="">Select a Trolley</option>
-                  </select>
-                  </div>
-                  
-                <div class="form-group">
-                  <label for="area" class="form-label">Janitor:</label>
-                  <select id="janitors"
-                          data-placeholder="Select Janitors"
-                          multiple
-                          class="chosen-select form-control"
-                          name="janitors">
-                          <option value="">Select a Janitor</option>
-                </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="area" class="form-label">Trucks:</label>
-                  <select id="trucks"
-                          data-placeholder="Select Trucks"
-                          multiple
-                          class="chosen-select form-control"
-                          name="trucks">
-                          <option value="">Select a Truck</option>
-                </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="area" class="form-label">Collectors:</label>
-                    <select id="collectors"
-                            data-placeholder="Select Collectors"
-                            multiple
-                            class="chosen-select form-control"
-                            name="collectors">
-                            <option value="">Select a Janitor</option>
+                    <select 
+                         id="mcps" 
+                         name="mcps">
+                    <option value="default">Select MCP</option>
                     </select>
                   </div>
-                  
+ <!--Trolleys-->                  
+                  <div class="form-group">
+                    <label for="area" class="form-label">Trolleys:</label>
+                    <select 
+                         id="trolleys" 
+                         name="trolleys">
+                    <option value="default">Select Trolley</option>
+                    </select>
+                  </div>
+ <!--Janitor -->                  
+                <div class="form-group">
+                  <label for="area" class="form-label">Janitor:</label>
+                  <select 
+                         id="janitors" 
+                         name="janitors">
+                    <option value="default">Select Janitor</option>
+                    </select>
+                </div>
+ <!-- Trucks -->
+                <div class="form-group">
+                  <label for="area" class="form-label">Trucks:</label>
+                  <select class ="form control"
+                         id="trucks" 
+                         name="trucks">
+                    <option value="default">Select Truck</option>
+                    </select>
+                </div>
+ <!--Collectors -->
+                <div class="form-group">
+                    <label for="area" class="form-label">Collectors:</label>
+                    <select class ="form control"
+                         id="collectors" 
+                         name="collectors">
+                    <option value="default">Select Collector</option>
+                    </select>
+                  </div>
+<!--Buttons -->                  
                 <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">Submit</button>
               </form>
-            -->
-            <form>
-              <div class="form-group">
-              <label for="start-time">Start Time:</label>
-              <select id="start-time">
-                <option value="">Select a Start Time</option>
-              </select>
-            </div>
-              <label for="end-time">End Time:</label>
-              <select id="end-time">
-                <option value="">Select an End Time</option>
-              </select>
-            
-              <label for="area">Area:</label>
-              <select id="area">
-                <option value="">Select an Area</option>
-              </select>
-            
-              <label for="mcps">MCPs:</label>
-              <select id="mcps">
-                <option value="">Select a MCP</option>
-              </select>
-            
-              <label for="trolleys">Trolleys:</label>
-              <select id="trolleys">
-                <option value="">Select a Trolley</option>
-              </select>
-            
-              <label for="collectors">Collectors:</label>
-              <select id="collectors">
-                <option value="">Select a Collector</option>
-              </select>
-            
-              <label for="trucks">Trucks:</label>
-              <select id="trucks">
-                <option value="">Select a Truck</option>
-              </select>
-            
-              <label for="janitors">Janitors:</label>
-              <select id="janitors">
-                <option value="">Select a Janitor</option>
-              </select>
-            
-              <input type="submit" value="Submit">
-            </form>
-            
-            
-            
-
-
-
-
-
-
+          
             </div>
           </div>
         </main>

@@ -111,6 +111,7 @@ endTimeSelect.appendChild(option);
 });
 
 areas.forEach((area) => {
+
 const option = document.createElement("option");
 option.value = area;
 option.text = area;

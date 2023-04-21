@@ -1,32 +1,33 @@
+// Data for dropdown select lists
 const startTimes = [
-    "9:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "12:00 PM",
-    "1:00 PM",
-    "2:00 PM",
-    "3:00 PM",
-    "4:00 PM",
-    "5:00 PM",
-  ];
+  "9:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "1:00 PM",
+  "2:00 PM",
+  "3:00 PM",
+  "4:00 PM",
+  "5:00 PM",
+];
 
-  const endTimes = [
-    "10:00 AM",
-    "11:00 AM",
-    "12:00 PM",
-    "1:00 PM",
-    "2:00 PM",
-    "3:00 PM",
-    "4:00 PM",
-    "5:00 PM",
-    "6:00 PM",
-  ];
+const endTimes = [
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "1:00 PM",
+  "2:00 PM",
+  "3:00 PM",
+  "4:00 PM",
+  "5:00 PM",
+  "6:00 PM",
+];
 
-  const areas = [
-    "North",
-    "South",
-    "East",
-    "West",
+const areas = [
+  "North",
+  "South",
+  "East",
+  "West",
 ];
 
 const mcps = [
@@ -104,7 +105,6 @@ startTimeSelect.appendChild(option);
 
 endTimes.forEach((time) => {
 const option = document.createElement("option");
-
 option.value = time;
 option.text = time;
 endTimeSelect.appendChild(option);
@@ -166,9 +166,8 @@ const selectedCollector = collectorSelect.value;
 const selectedTruck = truckSelect.value;
 const selectedJanitor = janitorSelect.value;
 console.log(
-  `Selected data: Start Time: ${selectedStartTime}, End Time: ${selectedEndTime}, Area: ${selectedArea}, MCP: ${selectedMCP}, Trolley: ${selectedTrolley}, Collector: ${selectedCollector}, Truck: ${selectedTruck}, Janitor: ${selectedJanitor}`
+`Selected data: Start Time: ${selectedStartTime}, End Time: ${selectedEndTime}, Area: ${selectedArea}, MCP: ${selectedMCP}, Trolley: ${selectedTrolley}, Collector: ${selectedCollector}, Truck: ${selectedTruck}, Janitor: ${selectedJanitor}`
 );
 
 // You can now use these variables to do whatever you need with the selected data
 });
-

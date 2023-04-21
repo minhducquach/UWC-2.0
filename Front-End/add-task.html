@@ -40,7 +40,7 @@
           <div class="container">
             <div class="form-block">
               <h2 class="text-center text-white mb-4">Create New Task</h2>
-              <form>
+         <!--     <form>
                 <div class="form-group">
                   <label for="startTime" class="form-label">Start Time:</label>
                   <input type="datetime-local" 
@@ -56,7 +56,7 @@
                          id="end-time" 
                          name="endTime">
                 </div>
- <!--Area-->
+ Area
                 <div class="form-group">
                   <label for="area'" class="form-label">Area:</label>
                   <select id="area"
@@ -64,12 +64,11 @@
                           multiple
                           class="chosen-select form-control"
                           name="area">
-                           
                           <option value="default">Select a Area</option>
                 </select>  
                     
                 </div>
- <!--MCPs-->    
+    
                 <div class="form-group">
                     <label for="area" class="form-label">MCPs:</label>
                     <select id="mcps"
@@ -80,7 +79,7 @@
                             <option value="">Select a MCP</option>
                   </select>
                   </div>
- <!--Trolleys-->                  
+               
                   <div class="form-group">
                     <label for="area" class="form-label">Trolleys:</label>
                     <select id="trolleys"
@@ -91,7 +90,7 @@
                             <option value="">Select a Trolley</option>
                   </select>
                   </div>
- <!--Janitor -->                  
+                  
                 <div class="form-group">
                   <label for="area" class="form-label">Janitor:</label>
                   <select id="janitors"
@@ -102,7 +101,7 @@
                           <option value="">Select a Janitor</option>
                 </select>
                 </div>
- <!-- Trucks -->
+
                 <div class="form-group">
                   <label for="area" class="form-label">Trucks:</label>
                   <select id="trucks"
@@ -113,7 +112,7 @@
                           <option value="">Select a Truck</option>
                 </select>
                 </div>
- <!--Collectors -->
+
                 <div class="form-group">
                     <label for="area" class="form-label">Collectors:</label>
                     <select id="collectors"
@@ -124,10 +123,63 @@
                             <option value="">Select a Janitor</option>
                     </select>
                   </div>
-<!--Buttons -->                  
+                  
                 <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">Submit</button>
               </form>
-          
+            -->
+            <form>
+              <div class="form-group">
+              <label for="start-time">Start Time:</label>
+              <select id="start-time">
+                <option value="">Select a Start Time</option>
+              </select>
+            </div>
+              <label for="end-time">End Time:</label>
+              <select id="end-time">
+                <option value="">Select an End Time</option>
+              </select>
+            
+              <label for="area">Area:</label>
+              <select id="area">
+                <option value="">Select an Area</option>
+              </select>
+            
+              <label for="mcps">MCPs:</label>
+              <select id="mcps">
+                <option value="">Select a MCP</option>
+              </select>
+            
+              <label for="trolleys">Trolleys:</label>
+              <select id="trolleys">
+                <option value="">Select a Trolley</option>
+              </select>
+            
+              <label for="collectors">Collectors:</label>
+              <select id="collectors">
+                <option value="">Select a Collector</option>
+              </select>
+            
+              <label for="trucks">Trucks:</label>
+              <select id="trucks">
+                <option value="">Select a Truck</option>
+              </select>
+            
+              <label for="janitors">Janitors:</label>
+              <select id="janitors">
+                <option value="">Select a Janitor</option>
+              </select>
+            
+              <input type="submit" value="Submit">
+            </form>
+            
+            
+            
+
+
+
+
+
+
             </div>
           </div>
         </main>
@@ -167,10 +219,10 @@
     <script src="./navbar.js"></script>
     <script src="./hide-side-bar.js"></script> -->
     <script src="../js/datatables-simple-demo.js"></script>
-    <!-- <script src="../js/task-list.js"></script> -->
+     <script src="../js/task-select.js"></script> 
     <script src="../components/sidebar.js"></script>
     <script src="../components/navbar.js"></script>
     <script src="../js/hide-side-bar.js"></script>
-    <script src="../js/taskselect.js"></script>
+   <!--<script src="../js/taskselect.js"></script> -->
   </body>
 </html>

@@ -2,10 +2,10 @@
   {
     "id": "MCP0001",
     "type": "MCP",
-    "location": "132 Lê Văn Thọ",
     "ward": "11",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "132 Lê Văn Thọ",
       "lon": 106.657142,
       "lat": 10.844348
     },
@@ -15,10 +15,10 @@
   {
     "id": "MCP0002",
     "type": "MCP",
-    "location": "435 Lê Đức Thọ",
     "ward": "5",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "435 Lê Đức Thọ",
       "lon": 106.674036,
       "lat": 10.843802
     },
@@ -28,10 +28,10 @@
   {
     "id": "MCP0003",
     "type": "MCP",
-    "location": "32 Nguyễn Văn Lượng",
     "ward": "17",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "32 Nguyễn Văn Lượng",
       "lon": 106.674604,
       "lat": 10.838689
     },
@@ -41,10 +41,10 @@
   {
     "id": "MCP0004",
     "type": "MCP",
-    "location": "1043 Lê Đức Thọ",
     "ward": "16",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "1043 Lê Đức Thọ",
       "lon": 106.661639,
       "lat": 10.851777
     },
@@ -54,10 +54,10 @@
   {
     "id": "MCP0005",
     "type": "MCP",
-    "location": "528 Nguyễn Văn Khối",
     "ward": "9",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "528 Nguyễn Văn Khối",
       "lon": 106.64510056071889,
       "lat": 10.845867745852026
     },
@@ -67,10 +67,10 @@
   {
     "id": "MCP0006",
     "type": "MCP",
-    "location": "4 Phạm Văn Chiêu",
     "ward": "8",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "4 Phạm Văn Chiêu",
       "lon": 106.64137847557656,
       "lat": 10.844831683546847
     },
@@ -80,10 +80,10 @@
   {
     "id": "MCP0007",
     "type": "MCP",
-    "location": "86 Nguyễn Thái Sơn",
     "ward": "3",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "86 Nguyễn Thái Sơn",
       "lon": 106.68053254061681,
       "lat": 10.816308368528626
     },
@@ -93,10 +93,10 @@
   {
     "id": "MCP0008",
     "type": "MCP",
-    "location": "220 Nguyễn Văn Nghi",
     "ward": "7",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "220 Nguyễn Văn Nghi",
       "lon": 106.68604756142221,
       "lat": 10.8247469417202
     },
@@ -106,10 +106,10 @@
   {
     "id": "MCP0009",
     "type": "MCP",
-    "location": "292 Phạm Văn Đồng",
     "ward": "1",
     "district": "Gò Vấp",
-    "coordinate": {
+    "address": {
+      "location_id": "292 Phạm Văn Đồng",
       "lon": 106.68938413664043,
       "lat": 10.819138710260136
     },

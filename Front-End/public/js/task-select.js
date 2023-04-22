@@ -478,7 +478,7 @@ const janitors = [
     "district": "Go Vap"
   }
 ];
-
+const TaskSelect = {};
 // Get references to form elements
 const startTimeSelect = document.getElementById("start-time");
 const endTimeSelect = document.getElementById("end-time");
@@ -490,18 +490,18 @@ const truckSelect = document.getElementById("trucks");
 const janitorSelect = document.getElementById("janitors");
 
 // Populate dropdown select lists with data
-startTimes.forEach((time) => {
-const option = document.createElement("option");
-option.value = time;
-option.text = time;
-startTimeSelect.appendChild(option);
+  startTimes.forEach((time) => {
+  const option = document.createElement("option");
+  option.value = time;
+  option.text = time;
+  startTimeSelect.appendChild(option);
 });
 
 endTimes.forEach((time) => {
-const option = document.createElement("option");
-option.value = time;
-option.text = time;
-endTimeSelect.appendChild(option);
+  const option = document.createElement("option");
+  option.value = time;
+  option.text = time;
+  endTimeSelect.appendChild(option);
 });
 
 areas.forEach((area) => {
@@ -544,30 +544,89 @@ vehicles.forEach((vehicles) => {
 });
 
 janitors.forEach((janitor) => {
-const option = document.createElement("option");
-option.value = janitor.id;
-option.text = janitor.id;
-janitorSelect.appendChild(option);
+  const option = document.createElement("option");
+  option.value = janitor.id;
+  option.text = janitor.id;
+  janitorSelect.appendChild(option);
 });
 
 // Save selected data to variables on form submit
 const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
-event.preventDefault();
+  event.preventDefault();
 
-const selectedStartTime = startTimeSelect.value;
-const selectedEndTime = endTimeSelect.value;
-const selectedArea = areaSelect.value;
-const selectedMCP = mcpSelect.value;
-const selectedTrolley = trolleySelect.value;
-const selectedCollector = collectorSelect.value;
-const selectedTruck = truckSelect.value;
-const selectedJanitor = janitorSelect.value;
-console.log(
-`Selected data: Start Time: ${selectedStartTime}, End Time: ${selectedEndTime}, Area: ${selectedArea}, MCP: ${selectedMCP}, Trolley: ${selectedTrolley}, Collector: ${selectedCollector}, Truck: ${selectedTruck}, Janitor: ${selectedJanitor}`
-);
+  const selectedStartTime = startTimeSelect.value;
+  const selectedEndTime = endTimeSelect.value;
+  const selectedArea = areaSelect.value;
+  const selectedMCP = [];
+  for (let i = 0; i < mcpSelect.options.length; i++) {
+    const option = mcpSelect.options[i];
 
-// You can now use these variables to do whatever you need with the selected data
+    if (option.selected) {
+      selectedMCP.push(option.value);
+    }
+  }
+  const selectedTrolley = [];
+  for (let i = 0; i < trolleySelect.options.length; i++) {
+    const option = trolleySelect.options[i];
+
+    if (option.selected) {
+      selectedTrolley.push(option.value);
+    }
+  }
+  const selectedCollector = collectorSelect.value;
+  const selectedTruck = truckSelect.value;
+  const selectedJanitor = [];
+  for (let i = 0; i < janitorSelect.options.length; i++) {
+    const option = janitorSelect.options[i];
+
+    if (option.selected) {
+      selectedJanitor.push(option.value);
+    }
+  }
+  //Janitor
+  const janitor = [];
+  for (let i = 0; i < selectedJanitor.length; i++) {
+    const janitor_infor = {};
+    janitor_infor.id = selectedJanitor[i];
+    janitor_infor.mcp = selectedMCP[i];
+    janitor_infor.vehicle = selectedTrolley[i];
+    janitor.push(janitor_infor);
+  }
+  //Collector
+  const collector = {};
+  collector.id = selectedCollector;
+  collector.vehicle = selectedTruck;
+  //Route
+  const route = [];
+  for (let i = 0; i < selectedMCP.length; i++) {
+    const route_infor = {};
+    route_infor.id = String(i + 1);
+    route_infor.address = {};
+    const index = mcps.findIndex(location => location.id === selectedMCP[i]);
+    route_infor.address.location_id = mcps[index].address.location_id;
+    route_infor.address.lon = mcps[index].address.lon;
+    route_infor.address.lat = mcps[index].address.lat;
+    route.push(route_infor);
+  }
+  //Task Data
+  TaskSelect.id = "TASK0004";
+  TaskSelect.description = "Dọn rác khu vực " + selectedArea;
+  TaskSelect.createdBy = "BO0001";
+  TaskSelect.janitor = [];
+  for (let i = 0; i < selectedJanitor.length; i++) {
+    TaskSelect.janitor.push(janitor[i]);
+  }
+  TaskSelect.collector = [];
+  TaskSelect.collector.push(collector);
+  TaskSelect.route = [];
+  for (let i = 0; i < selectedMCP.length; i++) {
+    TaskSelect.route.push(route[i]);
+  }
+  TaskSelect.startTime = selectedStartTime;
+  TaskSelect.endTime = selectedEndTime;
+  console.log(TaskSelect);
+  // You can now use these variables to do whatever you need with the selected data
 });
 
 $(".chosen-select").trigger("chosen:updated");

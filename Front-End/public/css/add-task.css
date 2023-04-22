@@ -54,3 +54,17 @@ a {
 .submit-btn {
     margin-top: 10px;
 }
+
+.multi-select {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.multi-select option {
+    padding: 5px;
+}

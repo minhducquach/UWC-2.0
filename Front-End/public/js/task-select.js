@@ -1,3 +1,31 @@
+var select = document.querySelector('.multi-select');
+  var isDragging = false;
+  var lastSelectedOption = null;
+
+  select.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+    isDragging = true;
+    lastSelectedOption = this.options[this.selectedIndex];
+
+    var clickedOption = document.elementFromPoint(e.clientX, e.clientY);
+    clickedOption.selected = !clickedOption.selected;
+  });
+
+  select.addEventListener('mousemove', function(e) {
+    if (isDragging) {
+      var hoveredOption = document.elementFromPoint(e.clientX, e.clientY);
+      if (hoveredOption.tagName == 'OPTION' && lastSelectedOption !== hoveredOption) {
+        hoveredOption.selected = !hoveredOption.selected;
+        lastSelectedOption = hoveredOption;
+      }
+    }
+  });
+
+  select.addEventListener('mouseup', function(e) {
+    isDragging = false;
+    lastSelectedOption = null;
+  });
+
 // Data for dropdown select lists
 const startTimes = [
   "9:00 AM",

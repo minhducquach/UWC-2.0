@@ -24,65 +24,459 @@ const endTimes = [
 ];
 
 const areas = [
-  "North",
-  "South",
-  "East",
-  "West",
+  "Quận Gò Vấp",
 ];
 
 const mcps = [
-"MCP1",
-"MCP2",
-"MCP3",
-"MCP4",
-"MCP5",
-"MCP6",
-"MCP7",
-"MCP8",
+  {
+    "id": "MCP0001",
+    "type": "MCP",
+    "ward": "11",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "132 Lê Văn Thọ",
+      "lon": 106.657142,
+      "lat": 10.844348
+    },
+    "capacity": "20",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0002",
+    "type": "MCP",
+    "ward": "5",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "435 Lê Đức Thọ",
+      "lon": 106.674036,
+      "lat": 10.843802
+    },
+    "capacity": "20",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0003",
+    "type": "MCP",
+    "ward": "17",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "32 Nguyễn Văn Lượng",
+      "lon": 106.674604,
+      "lat": 10.838689
+    },
+    "capacity": "20",
+    "state": "Full"
+  },
+  {
+    "id": "MCP0004",
+    "type": "MCP",
+    "ward": "16",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "1043 Lê Đức Thọ",
+      "lon": 106.661639,
+      "lat": 10.851777
+    },
+    "capacity": "20",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0005",
+    "type": "MCP",
+    "ward": "9",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "528 Nguyễn Văn Khối",
+      "lon": 106.64510056071889,
+      "lat": 10.845867745852026
+    },
+    "capacity": "25",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0006",
+    "type": "MCP",
+    "ward": "8",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "4 Phạm Văn Chiêu",
+      "lon": 106.64137847557656,
+      "lat": 10.844831683546847
+    },
+    "capacity": "18",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0007",
+    "type": "MCP",
+    "ward": "3",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "86 Nguyễn Thái Sơn",
+      "lon": 106.68053254061681,
+      "lat": 10.816308368528626
+    },
+    "capacity": "20",
+    "state": "Full"
+  },
+  {
+    "id": "MCP0008",
+    "type": "MCP",
+    "ward": "7",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "220 Nguyễn Văn Nghi",
+      "lon": 106.68604756142221,
+      "lat": 10.8247469417202
+    },
+    "capacity": "20",
+    "state": "Empty"
+  },
+  {
+    "id": "MCP0009",
+    "type": "MCP",
+    "ward": "1",
+    "district": "Gò Vấp",
+    "address": {
+      "location_id": "292 Phạm Văn Đồng",
+      "lon": 106.68938413664043,
+      "lat": 10.819138710260136
+    },
+    "capacity": "20",
+    "state": "Empty"
+  }
 ];
 
-const trolleys = [
-"Trolley1",
-"Trolley2",
-"Trolley3",
-"Trolley4",
-"Trolley5",
-"Trolley6",
-"Trolley7",
-"Trolley8",
-];
+
+const vehicles = [
+  {
+    "id": "TK0001",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TK0002",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TK0003",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0001",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0002",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0003",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0004",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0005",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0006",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0007",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0008",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  },
+  {
+    "id": "TR0009",
+    "vehicle_info": {
+      "start_address": {
+        "location_id": "Bãi xe",
+        "lon": 106.664658,
+        "lat": 10.847044
+      }
+    },
+    "state": "Free"
+  }
+]
+;
 
 const collectors = [
-"Collector1",
-"Collector2",
-"Collector3",
-"Collector4",
-"Collector5",
-"Collector6",
-"Collector7",
-"Collector8",
-];
-
-const trucks = [
-"Truck1",
-"Truck2",
-"Truck3",
-"Truck4",
-"Truck5",
-"Truck6",
-"Truck7",
-"Truck8",
+  {
+    "id": "CO0001",
+    "name": "Nguyễn Văn A",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "157 Nguyễn Oanh",
+    "ward": "1",
+    "district": "Gò Vấp"
+  },
+  {
+    "id": "CO0002",
+    "name": "Nguyễn Văn B",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "30 NguyễnOanh",
+    "ward": "1",
+    "district": "Gò Vấp"
+  },
+  {
+    "id": "CO0003",
+    "name": "Nguyễn Văn C",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "528 Nguyễn Văn Khối",
+    "ward": "9",
+    "district": "Gò Vấp"
+  },
+  {
+    "id": "CO0004",
+    "name": "Nguyễn Văn D",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "530 Nguyễn Văn Khối",
+    "ward": "9",
+    "district": "Gò Vấp"
+  },
+  {
+    "id": "CO0005",
+    "name": "Nguyễn Văn E",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "557 Nguyễn Văn Khối",
+    "ward": "8",
+    "district": "Gò Vấp"
+  },
+  {
+    "id": "CO0006",
+    "name": "Nguyễn Văn F",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "588 Nguyễn Văn Quá",
+    "ward": "Đông Hưng Thuận",
+    "district": "12"
+  },
+  {
+    "id": "CO0007",
+    "name": "Nguyễn Văn G",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "590 Nguyễn Văn Quá",
+    "ward": "Đông Hưng Thuận",
+    "district": "12"
+  },
+  {
+    "id": "CO0008",
+    "name": "Nguyễn Văn H",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "40 QL1A",
+    "ward": "Thới An",
+    "district": "12"
+  },
+  {
+    "id": "CO0009",
+    "name": "Nguyễn Văn I",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "42 QL1A",
+    "ward": "Thới An",
+    "district": "12"
+  },
+  {
+    "id": "CO0010",
+    "name": "Nguyễn Văn J",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "100 Vườn Lài",
+    "ward": "An Phú Đông",
+    "district": "12"
+  },
+  {
+    "id": "CO0011",
+    "name": "Nguyễn Văn K",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "102 Vườn Lài",
+    "ward": "An Phú Đông",
+    "district": "12"
+  },
+  {
+    "id": "CO0012",
+    "name": "Nguyễn Văn L",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "124 Phan Đăng Lưu",
+    "ward": "3",
+    "district": "Phú Nhuận"
+  },
+  {
+    "id": "CO0013",
+    "name": "Nguyễn Văn M",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "126 Phan Đăng Lưu",
+    "ward": "3",
+    "district": "Phú Nhuận"
+  },
+  {
+    "id": "CO0014",
+    "name": "Nguyễn Văn N",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "300 Phan Xích Long",
+    "ward": "1",
+    "district": "Phú Nhuận"
+  },
+  {
+    "id": "CO0015",
+    "name": "Nguyễn Văn O",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "351 Phan Xích Long",
+    "ward": "1",
+    "district": "Phú Nhuận"
+  },
+  {
+    "id": "CO0016",
+    "name": "Nguyễn Văn P",
+    "sex": "Nam",
+    "phone": "091765212",
+    "address": "5 Thích Quảng Đức",
+    "ward": "5",
+    "district": "Phú Nhuận"
+  }
 ];
 
 const janitors = [
-"Janitor1",
-"Janitor2",
-"Janitor3",
-"Janitor4",
-"Janitor5",
-"Janitor6",
-"Janitor7",
-"Janitor8",
+  {
+    "id": "JN0001",
+    "name": "Trần Văn A",
+    "sex": "Nam",
+    "phone": "088765212",
+    "address": "132/12 Nguyen Oanh",
+    "ward": "1",
+    "district": "Go Vap"
+  },
+  {
+    "id": "JN0002",
+    "name": "Trần Văn B",
+    "sex": "Nam",
+    "phone": "077765212",
+    "address": "9 Nguyen Oanh",
+    "ward": "1",
+    "district": "Go Vap"
+  },
+  {
+    "id": "JN0003",
+    "name": "Trần Văn C",
+    "sex": "Nam",
+    "phone": "022765212",
+    "address": "9 Nguyen Van Luong",
+    "ward": "1",
+    "district": "Go Vap"
+  },
+  {
+    "id": "JN0004",
+    "name": "Trần Văn D",
+    "sex": "Nam",
+    "phone": "011765212",
+    "address": "9/12 Thong Nhat",
+    "ward": "1",
+    "district": "Go Vap"
+  },
+  {
+    "id": "JN0005",
+    "name": "Trần Văn E",
+    "sex": "Nam",
+    "phone": "033765212",
+    "address": "93 Nguyen Oanh",
+    "ward": "1",
+    "district": "Go Vap"
+  }
 ];
 
 // Get references to form elements
@@ -111,45 +505,48 @@ endTimeSelect.appendChild(option);
 });
 
 areas.forEach((area) => {
-
-const option = document.createElement("option");
-option.value = area;
-option.text = area;
-areaSelect.appendChild(option);
+  const option = document.createElement("option");
+  option.value = area;
+  option.text = area;
+  areaSelect.appendChild(option);
 });
 
 mcps.forEach((mcp) => {
-const option = document.createElement("option");
-option.value = mcp;
-option.text = mcp;
-mcpSelect.appendChild(option);
+  const option = document.createElement("option");
+  option.value = mcp.id;
+  option.text = mcp.id;
+  mcpSelect.appendChild(option);
 });
 
-trolleys.forEach((trolley) => {
-const option = document.createElement("option");
-option.value = trolley;
-option.text = trolley;
-trolleySelect.appendChild(option);
+vehicles.forEach((vehicles) => {
+  if(vehicles.id.slice(0,2) == 'TR') {
+    const option = document.createElement("option");
+    option.value = vehicles.id;
+    option.text = vehicles.id;
+    trolleySelect.appendChild(option);
+  }
 });
 
 collectors.forEach((collector) => {
-const option = document.createElement("option");
-option.value = collector;
-option.text = collector;
-collectorSelect.appendChild(option);
+  const option = document.createElement("option");
+  option.value = collector.id;
+  option.text = collector.id;
+  collectorSelect.appendChild(option);
 });
 
-trucks.forEach((truck) => {
-const option = document.createElement("option");
-option.value = truck;
-option.text = truck;
-truckSelect.appendChild(option);
+vehicles.forEach((vehicles) => {
+  if(vehicles.id.slice(0,2) == 'TK') {
+    const option = document.createElement("option");
+    option.value = vehicles.id;
+    option.text = vehicles.id;
+    truckSelect.appendChild(option);
+  }
 });
 
 janitors.forEach((janitor) => {
 const option = document.createElement("option");
-option.value = janitor;
-option.text = janitor;
+option.value = janitor.id;
+option.text = janitor.id;
 janitorSelect.appendChild(option);
 });
 

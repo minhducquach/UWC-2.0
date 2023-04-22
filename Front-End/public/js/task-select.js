@@ -1,5 +1,5 @@
 // Data for dropdown select lists
-
+/*
 const startDates =[
    "15-04-2023",
    "16-04-2023",
@@ -13,7 +13,7 @@ const startDates =[
    "24-4-2023",
    "25-4-2023",
 ];
-
+*/
 const startTimes = [
   "9:00 AM",
   "10:00 AM",
@@ -505,15 +505,30 @@ const collectorSelect = document.getElementById("collectors");
 const truckSelect = document.getElementById("trucks");
 const janitorSelect = document.getElementById("janitors");
 
-// Populate dropdown select lists with data
+// var select = document.getElementById("mySelect");
+/*
+var month = 1; // Change this to the month you want to populate the dropdown with
+var year = new Date().getFullYear(); // Get the current year
 
+for (var i = 1; i <= getDaysInMonth(month, year); i++) {
+  var day = ("0" + i).slice(-2);
+  var option = document.createElement("option");
+  option.text = day + "/" + month + "/" + year;
+  startDateSelect.add(option);
+}
+
+function getDaysInMonth(month, year) {
+  return new Date(year, month, 0).getDate();
+}
+*/
+/*
 startDates.forEach((date) => {
   const option = document.createElement("option");
   option.value = date;
   option.text = date;
   startDateSelect.appendChild(option);
 });
-
+*/
   startTimes.forEach((time) => {
   const option = document.createElement("option");
   option.value = time;

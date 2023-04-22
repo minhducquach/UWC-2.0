@@ -43,101 +43,96 @@
               <h2 class="text-center text-white mb-4">Create New Task</h2>
               <form>
                 <div class="form-group">
-                  <label for="startDate" class="form-label">Start Date:</label>
-                  <select type="datetime-local"                          
-                         id="start-date" 
-                         name="startDate"
-                         class="form-control">
-                      <option value="default">Select start date</option>
-                      </select>
+                  <label for="startDate" class="form-label">Chọn ngày:</label>
+                  <input type="date" id="start-date" name="startDate" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="startTime" class="form-label">Start Time:</label>
+                  <label for="startTime" class="form-label">Giờ bắt đầu công việc:</label>
                   <select type="datetime-local"                          
                          id="start-time" 
                          name="startTime"
                          class="form-control">
-                      <option value="default">Select start time</option>
+                      <option value="default">Chọn giờ bắt đầu thực hiện công việc </option>
                       </select>
                 </div>
                 <div class="form-group">
-                  <label for="endTime" class="form-label">End Time:</label>
+                  <label for="endTime" class="form-label">Giờ kết thúc công việc:</label>
                   <select type="datetime-local" 
                          id="end-time" 
                          name="endTime"
                          class="form-control">
-                    <option value="default">Select end time</option>
+                    <option value="default">Chọn giờ kết thúc công việc</option>
                     </select>
                 </div>
  <!--Area-->
                 <div class="form-group">
-                  <label for="area'" class="form-label">Area:</label>
+                  <label for="area'" class="form-label">Chọn khu vực thực hiện công việc:</label>
                   <select multiple
                          id="area" 
                          name="area"
                          class="chosen-select form-control"
                          data-placeholder="Select Areas">
-                    <option value="default">Select area</option>
+                    <option value="default">Chọn quận </option>
                     </select>
                     
                 </div>
  <!--MCPs-->    
                 <div class="form-group">
-                    <label for="area" class="form-label">MCPs:</label>
+                    <label for="area" class="form-label">Chọn MCPs:</label>
                     <select multiple
                          id="mcps" 
                          name="mcps"
                          class="chosen-select form-control"
                          data-placeholder="Select MCPs">
-                    <option value="default">Select MCP</option>
+                    <option value="default"> Chọn MCP</option>
                     </select>
                   </div>
  <!--Trolleys-->                  
                   <div class="form-group">
-                    <label for="area" class="form-label">Trolleys:</label>
+                    <label for="area" class="form-label">Chọn Trolleys:</label>
                     <select multiple
                          id="trolleys" 
                          name="trolleys"
                          class="chosen-select form-control"
                          data-placeholder="Select Trolleys">
-                    <option value="default">Select Trolley</option>
+                    <option value="default">Chọn Trolley</option>
                     </select>
                   </div>
  <!--Janitor -->                  
                 <div class="form-group">
-                  <label for="area" class="form-label">Janitor:</label>
+                  <label for="area" class="form-label">Chọn Janitor:</label>
                   <select multiple
                          id="janitors" 
                          name="janitors"
                          class="chosen-select form-control"
                          data-placeholder="Select Janitors">
-                    <option value="default">Select Janitor</option>
+                    <option value="default">Chọn Janitor</option>
                     </select>
                 </div>
  <!-- Trucks -->
                 <div class="form-group">
-                  <label for="area" class="form-label">Trucks:</label>
+                  <label for="area" class="form-label">Chọn xe :</label>
                   <select 
                          id="trucks" 
                          name="trucks"
                          class="form-control"
                          data-placeholder="Select Trucks">
-                    <option value="default">Select Truck</option>
+                    <option value="default">Chọn xe</option>
                     </select>
                 </div>
  <!--Collectors -->
                 <div class="form-group">
-                    <label for="area" class="form-label">Collectors:</label>
+                    <label for="area" class="form-label">Chọn Collectors:</label>
                     <select
                          id="collectors" 
                          name="collectors"
                          class="form-control"
                          data-placeholder="Select Collectors">
-                    <option value="default">Select Collector</option>
+                    <option value="default">Chọn Collector</option>
                     </select>
                   </div>
 <!--Buttons -->                  
-                <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">Submit</button>
+                <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">Lưu lựa chọn</button>
               </form>
           
             </div>

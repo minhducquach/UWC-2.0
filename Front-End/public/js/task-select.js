@@ -314,12 +314,7 @@ const btn = document.getElementById("submit-btn");
 btn.addEventListener("click", async () => {
   await postTask();
   console.log(TaskSelect);
-  var result = confirm("Bạn có muốn thêm công việc?");
-    if (result) {
-        window.location.href = "/Front-end/tasks-management.html";
-    } else {
-        alert("Bạn có thể chỉnh sửa thông tin công việc");
-    }
+  
 });
 
 $(".chosen-select").trigger("chosen:updated");

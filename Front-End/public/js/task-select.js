@@ -102,7 +102,14 @@ const trolleySelect = document.getElementById("trolleys");
 const collectorSelect = document.getElementById("collectors");
 const truckSelect = document.getElementById("trucks");
 const janitorSelect = document.getElementById("janitors");
-
+function clickbutton(){
+  var result = confirm("Bạn có muốn thêm công việc?","Có","Không");
+    if (result) {
+        window.location.href = "/Front-end/tasks-management.html";
+    } else {
+        alert("Bạn có thể chỉnh sửa thông tin công việc");
+    }
+}
 // var select = document.getElementById("mySelect");
 /*
 var month = 1; // Change this to the month you want to populate the dropdown with

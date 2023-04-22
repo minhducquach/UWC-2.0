@@ -51,8 +51,8 @@
                   <select type="datetime-local"                          
                          id="start-time" 
                          name="startTime"
-                         class="form-control">
-                      <option value="default">Chọn giờ bắt đầu thực hiện công việc </option>
+                         class="form-control"
+                         data-placeholder="Chọn giờ bắt đầu thực hiện công việc">
                       </select>
                 </div>
                 <div class="form-group">
@@ -60,8 +60,8 @@
                   <select type="datetime-local" 
                          id="end-time" 
                          name="endTime"
-                         class="form-control">
-                    <option value="default">Chọn giờ kết thúc công việc</option>
+                         class="form-control"
+                         data-placeholder="Chọn giờ kết thúc công việc">
                     </select>
                 </div>
  <!--Area-->
@@ -71,8 +71,7 @@
                          id="area" 
                          name="area"
                          class="chosen-select form-control"
-                         data-placeholder="Select Areas">
-                    <option value="default">Chọn quận </option>
+                         data-placeholder="Chọn quận">
                     </select>
                     
                 </div>
@@ -83,8 +82,7 @@
                          id="mcps" 
                          name="mcps"
                          class="chosen-select form-control"
-                         data-placeholder="Select MCPs">
-                    <option value="default"> Chọn MCP</option>
+                         data-placeholder="Chọn MCP">
                     </select>
                   </div>
  <!--Trolleys-->                  
@@ -94,8 +92,7 @@
                          id="trolleys" 
                          name="trolleys"
                          class="chosen-select form-control"
-                         data-placeholder="Select Trolleys">
-                    <option value="default">Chọn Trolley</option>
+                         data-placeholder="Chọn Trolley">
                     </select>
                   </div>
  <!--Janitor -->                  
@@ -105,30 +102,27 @@
                          id="janitors" 
                          name="janitors"
                          class="chosen-select form-control"
-                         data-placeholder="Select Janitors">
-                    <option value="default">Chọn Janitor</option>
+                         data-placeholder="Chọn Janitor">
                     </select>
                 </div>
  <!-- Trucks -->
                 <div class="form-group">
                   <label for="area" class="form-label">Chọn xe :</label>
-                  <select 
+                  <select multiple
                          id="trucks" 
                          name="trucks"
-                         class="form-control"
-                         data-placeholder="Select Trucks">
-                    <option value="default">Chọn xe</option>
+                         class="chosen-select form-control"
+                         data-placeholder="Chọn xe">
                     </select>
                 </div>
  <!--Collectors -->
                 <div class="form-group">
                     <label for="area" class="form-label">Chọn Collectors:</label>
-                    <select
+                    <select multiple
                          id="collectors" 
                          name="collectors"
-                         class="form-control"
-                         data-placeholder="Select Collectors">
-                    <option value="default">Chọn Collector</option>
+                         class="chosen-select form-control"
+                         data-placeholder="Chọn Collector">
                     </select>
                   </div>
 <!--Buttons -->                  

@@ -613,8 +613,22 @@ form.addEventListener("submit", (event) => {
       selectedTrolley.push(option.value);
     }
   }
-  const selectedCollector = collectorSelect.value;
-  const selectedTruck = truckSelect.value;
+  const selectedCollector = [];
+  for (let i = 0; i < collectorSelect.options.length; i++) {
+    const option = collectorSelect.options[i];
+
+    if (option.selected) {
+      selectedCollector.push(option.value);
+    }
+  }
+  const selectedTruck = [];
+  for (let i = 0; i < truckSelect.options.length; i++) {
+    const option = truckSelect.options[i];
+
+    if (option.selected) {
+      selectedTruck.push(option.value);
+    }
+  }
   const selectedJanitor = [];
   for (let i = 0; i < janitorSelect.options.length; i++) {
     const option = janitorSelect.options[i];
@@ -633,9 +647,13 @@ form.addEventListener("submit", (event) => {
     janitor.push(janitor_infor);
   }
   //Collector
-  const collector = {};
-  collector.id = selectedCollector;
-  collector.vehicle = selectedTruck;
+  const collector = [];
+  for (let i = 0; i < selectedCollector.length; i++) {
+    const collector_infor = {};
+    collector_infor.id = selectedCollector[i];
+    collector_infor.vehicle = selectedTruck[i];
+    collector.push(collector_infor);
+  }
   //Route
   const route = [];
   for (let i = 0; i < selectedMCP.length; i++) {
@@ -648,18 +666,28 @@ form.addEventListener("submit", (event) => {
     route_infor.address.lat = mcps[index].address.lat;
     route.push(route_infor);
   }
+  const return_route = {};
+  return_route.id = String(selectedMCP.length + 1);
+  return_route.address = {};
+  const return_index = mcps.findIndex(location => location.id === "MCP0004");
+  return_route.address.location_id = mcps[return_index].address.location_id;
+  return_route.address.lon = mcps[return_index].address.lon;
+  return_route.address.lat = mcps[return_index].address.lat;
+  route.push(return_route);
   //Task Data
   TaskSelect.id = "TASK0004";
   TaskSelect.description = "Dọn rác khu vực " + selectedArea;
   TaskSelect.createdBy = "BO0001";
   TaskSelect.janitor = [];
-  for (let i = 0; i < selectedJanitor.length; i++) {
+  for (let i = 0; i < janitor.length; i++) {
     TaskSelect.janitor.push(janitor[i]);
   }
   TaskSelect.collector = [];
-  TaskSelect.collector.push(collector);
+  for (let i = 0; i < collector.length; i++) {
+    TaskSelect.collector.push(collector[i]);
+  }
   TaskSelect.route = [];
-  for (let i = 0; i < selectedMCP.length; i++) {
+  for (let i = 0; i < route.length; i++) {
     TaskSelect.route.push(route[i]);
   }
   TaskSelect.startDate = selectedDate;

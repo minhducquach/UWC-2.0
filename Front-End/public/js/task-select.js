@@ -1,4 +1,19 @@
 // Data for dropdown select lists
+
+const startDates =[
+   "15-04-2023",
+   "16-04-2023",
+   "17-04-2023",
+   "18-4-2023",
+   "19-4-2023",
+   "20-4-2023",
+   "21-4-2023",
+   "22-4-2023",
+   "23-4-2023",
+   "24-4-2023",
+   "25-4-2023",
+];
+
 const startTimes = [
   "9:00 AM",
   "10:00 AM",
@@ -480,6 +495,7 @@ const janitors = [
 ];
 const TaskSelect = {};
 // Get references to form elements
+const startDateSelect = document.getElementById("start-date");
 const startTimeSelect = document.getElementById("start-time");
 const endTimeSelect = document.getElementById("end-time");
 const areaSelect = document.getElementById("area");
@@ -490,6 +506,14 @@ const truckSelect = document.getElementById("trucks");
 const janitorSelect = document.getElementById("janitors");
 
 // Populate dropdown select lists with data
+
+startDates.forEach((date) => {
+  const option = document.createElement("option");
+  option.value = date;
+  option.text = date;
+  startDateSelect.appendChild(option);
+});
+
   startTimes.forEach((time) => {
   const option = document.createElement("option");
   option.value = time;
@@ -554,7 +578,7 @@ janitors.forEach((janitor) => {
 const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
+  const selectedDate = startDateSelect.value;
   const selectedStartTime = startTimeSelect.value;
   const selectedEndTime = endTimeSelect.value;
   const selectedArea = areaSelect.value;

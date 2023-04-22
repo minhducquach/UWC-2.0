@@ -14,6 +14,21 @@ const startDates =[
    "25-4-2023",
 ];
 */
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 const startTimes = [
   "9:00 AM",
   "10:00 AM",
@@ -38,461 +53,44 @@ const endTimes = [
   "6:00 PM",
 ];
 
-const areas = [
-  "Quận Gò Vấp",
-];
+const areas = ["Quận Gò Vấp"];
 
-const mcps = [
-  {
-    "id": "MCP0001",
-    "type": "MCP",
-    "ward": "11",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "132 Lê Văn Thọ",
-      "lon": 106.657142,
-      "lat": 10.844348
-    },
-    "capacity": "20",
-    "state": "Empty"
-  },
-  {
-    "id": "MCP0002",
-    "type": "MCP",
-    "ward": "5",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "435 Lê Đức Thọ",
-      "lon": 106.674036,
-      "lat": 10.843802
-    },
-    "capacity": "20",
-    "state": "Empty"
-  },
-  {
-    "id": "MCP0003",
-    "type": "MCP",
-    "ward": "17",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "32 Nguyễn Văn Lượng",
-      "lon": 106.674604,
-      "lat": 10.838689
-    },
-    "capacity": "20",
-    "state": "Full"
-  },
-  {
-    "id": "MCP0004",
-    "type": "MCP",
-    "ward": "16",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "1043 Lê Đức Thọ",
-      "lon": 106.661639,
-      "lat": 10.851777
-    },
-    "capacity": "20",
-    "state": "Empty"
-  },
-  {
-    "id": "MCP0005",
-    "type": "MCP",
-    "ward": "9",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "528 Nguyễn Văn Khối",
-      "lon": 106.64510056071889,
-      "lat": 10.845867745852026
-    },
-    "capacity": "25",
-    "state": "Empty"
-  },
-  {
-    "id": "MCP0006",
-    "type": "MCP",
-    "ward": "8",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "4 Phạm Văn Chiêu",
-      "lon": 106.64137847557656,
-      "lat": 10.844831683546847
-    },
-    "capacity": "18",
-    "state": "Empty"
-  },
-  {
-    "id": "MCP0007",
-    "type": "MCP",
-    "ward": "3",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "86 Nguyễn Thái Sơn",
-      "lon": 106.68053254061681,
-      "lat": 10.816308368528626
-    },
-    "capacity": "20",
-    "state": "Full"
-  },
-  {
-    "id": "MCP0008",
-    "type": "MCP",
-    "ward": "7",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "220 Nguyễn Văn Nghi",
-      "lon": 106.68604756142221,
-      "lat": 10.8247469417202
-    },
-    "capacity": "20",
-    "state": "Empty"
-  },
-  {
-    "id": "MCP0009",
-    "type": "MCP",
-    "ward": "1",
-    "district": "Gò Vấp",
-    "address": {
-      "location_id": "292 Phạm Văn Đồng",
-      "lon": 106.68938413664043,
-      "lat": 10.819138710260136
-    },
-    "capacity": "20",
-    "state": "Empty"
-  }
-];
+let mcps = [];
+let vehicles = [];
+let janitors = [];
+let collectors = [];
+async function getData() {
+  let mcp = await fetch("/mcps/getAllMCPs")
+    .then((response) => response.json())
+    .then((data) => {
+      mcps = data;
+    })
+    .catch((error) => console.error(error));
 
+  let vehicle = await fetch("/vehicles/getAllVehicles")
+    .then((response) => response.json())
+    .then((data) => {
+      vehicles = data;
+    })
+    .catch((error) => console.error(error));
 
-const vehicles = [
-  {
-    "id": "TK0001",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TK0002",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TK0003",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0001",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0002",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0003",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0004",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0005",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0006",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0007",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0008",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  },
-  {
-    "id": "TR0009",
-    "vehicle_info": {
-      "start_address": {
-        "location_id": "Bãi xe",
-        "lon": 106.664658,
-        "lat": 10.847044
-      }
-    },
-    "state": "Free"
-  }
-]
-;
+  let jan = await fetch("/staffs/getAllJanitors")
+    .then((response) => response.json())
+    .then((data) => {
+      janitors = data;
+    })
+    .catch((error) => console.error(error));
 
-const collectors = [
-  {
-    "id": "CO0001",
-    "name": "Nguyễn Văn A",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "157 Nguyễn Oanh",
-    "ward": "1",
-    "district": "Gò Vấp"
-  },
-  {
-    "id": "CO0002",
-    "name": "Nguyễn Văn B",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "30 NguyễnOanh",
-    "ward": "1",
-    "district": "Gò Vấp"
-  },
-  {
-    "id": "CO0003",
-    "name": "Nguyễn Văn C",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "528 Nguyễn Văn Khối",
-    "ward": "9",
-    "district": "Gò Vấp"
-  },
-  {
-    "id": "CO0004",
-    "name": "Nguyễn Văn D",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "530 Nguyễn Văn Khối",
-    "ward": "9",
-    "district": "Gò Vấp"
-  },
-  {
-    "id": "CO0005",
-    "name": "Nguyễn Văn E",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "557 Nguyễn Văn Khối",
-    "ward": "8",
-    "district": "Gò Vấp"
-  },
-  {
-    "id": "CO0006",
-    "name": "Nguyễn Văn F",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "588 Nguyễn Văn Quá",
-    "ward": "Đông Hưng Thuận",
-    "district": "12"
-  },
-  {
-    "id": "CO0007",
-    "name": "Nguyễn Văn G",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "590 Nguyễn Văn Quá",
-    "ward": "Đông Hưng Thuận",
-    "district": "12"
-  },
-  {
-    "id": "CO0008",
-    "name": "Nguyễn Văn H",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "40 QL1A",
-    "ward": "Thới An",
-    "district": "12"
-  },
-  {
-    "id": "CO0009",
-    "name": "Nguyễn Văn I",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "42 QL1A",
-    "ward": "Thới An",
-    "district": "12"
-  },
-  {
-    "id": "CO0010",
-    "name": "Nguyễn Văn J",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "100 Vườn Lài",
-    "ward": "An Phú Đông",
-    "district": "12"
-  },
-  {
-    "id": "CO0011",
-    "name": "Nguyễn Văn K",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "102 Vườn Lài",
-    "ward": "An Phú Đông",
-    "district": "12"
-  },
-  {
-    "id": "CO0012",
-    "name": "Nguyễn Văn L",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "124 Phan Đăng Lưu",
-    "ward": "3",
-    "district": "Phú Nhuận"
-  },
-  {
-    "id": "CO0013",
-    "name": "Nguyễn Văn M",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "126 Phan Đăng Lưu",
-    "ward": "3",
-    "district": "Phú Nhuận"
-  },
-  {
-    "id": "CO0014",
-    "name": "Nguyễn Văn N",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "300 Phan Xích Long",
-    "ward": "1",
-    "district": "Phú Nhuận"
-  },
-  {
-    "id": "CO0015",
-    "name": "Nguyễn Văn O",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "351 Phan Xích Long",
-    "ward": "1",
-    "district": "Phú Nhuận"
-  },
-  {
-    "id": "CO0016",
-    "name": "Nguyễn Văn P",
-    "sex": "Nam",
-    "phone": "091765212",
-    "address": "5 Thích Quảng Đức",
-    "ward": "5",
-    "district": "Phú Nhuận"
-  }
-];
+  let col = await fetch("/staffs/getAllCollectors")
+    .then((response) => response.json())
+    .then((data) => {
+      collectors = data;
+    })
+    .catch((error) => console.error(error));
+}
 
-const janitors = [
-  {
-    "id": "JN0001",
-    "name": "Trần Văn A",
-    "sex": "Nam",
-    "phone": "088765212",
-    "address": "132/12 Nguyen Oanh",
-    "ward": "1",
-    "district": "Go Vap"
-  },
-  {
-    "id": "JN0002",
-    "name": "Trần Văn B",
-    "sex": "Nam",
-    "phone": "077765212",
-    "address": "9 Nguyen Oanh",
-    "ward": "1",
-    "district": "Go Vap"
-  },
-  {
-    "id": "JN0003",
-    "name": "Trần Văn C",
-    "sex": "Nam",
-    "phone": "022765212",
-    "address": "9 Nguyen Van Luong",
-    "ward": "1",
-    "district": "Go Vap"
-  },
-  {
-    "id": "JN0004",
-    "name": "Trần Văn D",
-    "sex": "Nam",
-    "phone": "011765212",
-    "address": "9/12 Thong Nhat",
-    "ward": "1",
-    "district": "Go Vap"
-  },
-  {
-    "id": "JN0005",
-    "name": "Trần Văn E",
-    "sex": "Nam",
-    "phone": "033765212",
-    "address": "93 Nguyen Oanh",
-    "ward": "1",
-    "district": "Go Vap"
-  }
-];
+await getData();
+console.log(mcps);
 const TaskSelect = {};
 // Get references to form elements
 const startDateSelect = document.getElementById("start-date");
@@ -529,7 +127,7 @@ startDates.forEach((date) => {
   startDateSelect.appendChild(option);
 });
 */
-  startTimes.forEach((time) => {
+startTimes.forEach((time) => {
   const option = document.createElement("option");
   option.value = time;
   option.text = time;
@@ -547,7 +145,7 @@ areas.forEach((area) => {
   const option = document.createElement("option");
   option.value = area;
   option.text = area;
-  areaSelect.append(option)
+  areaSelect.append(option);
 });
 
 mcps.forEach((mcp) => {
@@ -558,7 +156,7 @@ mcps.forEach((mcp) => {
 });
 
 vehicles.forEach((vehicle) => {
-  if(vehicle.id.slice(0,2) == 'TR') {
+  if (vehicle.id.slice(0, 2) == "TR") {
     const option = document.createElement("option");
     option.value = vehicle.id;
     option.text = vehicle.id;
@@ -574,7 +172,7 @@ collectors.forEach((collector) => {
 });
 
 vehicles.forEach((vehicles) => {
-  if(vehicles.id.slice(0,2) == 'TK') {
+  if (vehicles.id.slice(0, 2) == "TK") {
     const option = document.createElement("option");
     option.value = vehicles.id;
     option.text = vehicles.id;
@@ -589,114 +187,124 @@ janitors.forEach((janitor) => {
   janitorSelect.appendChild(option);
 });
 
-// Save selected data to variables on form submit
-const form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const selectedDate = startDateSelect.value;
-  const selectedStartTime = startTimeSelect.value;
-  const selectedEndTime = endTimeSelect.value;
-  const selectedArea = areaSelect.value;
-  const selectedMCP = [];
-  for (let i = 0; i < mcpSelect.options.length; i++) {
-    const option = mcpSelect.options[i];
+const selectedDate = startDateSelect.value;
+const selectedStartTime = startTimeSelect.value;
+const selectedEndTime = endTimeSelect.value;
+const selectedArea = areaSelect.value;
+const selectedMCP = [];
+for (let i = 0; i < mcpSelect.options.length; i++) {
+  const option = mcpSelect.options[i];
 
-    if (option.selected) {
-      selectedMCP.push(option.value);
-    }
+  if (option.selected) {
+    selectedMCP.push(option.value);
   }
-  const selectedTrolley = [];
-  for (let i = 0; i < trolleySelect.options.length; i++) {
-    const option = trolleySelect.options[i];
+}
+const selectedTrolley = [];
+for (let i = 0; i < trolleySelect.options.length; i++) {
+  const option = trolleySelect.options[i];
 
-    if (option.selected) {
-      selectedTrolley.push(option.value);
-    }
+  if (option.selected) {
+    selectedTrolley.push(option.value);
   }
-  const selectedCollector = [];
-  for (let i = 0; i < collectorSelect.options.length; i++) {
-    const option = collectorSelect.options[i];
+}
+const selectedCollector = [];
+for (let i = 0; i < collectorSelect.options.length; i++) {
+  const option = collectorSelect.options[i];
 
-    if (option.selected) {
-      selectedCollector.push(option.value);
-    }
+  if (option.selected) {
+    selectedCollector.push(option.value);
   }
-  const selectedTruck = [];
-  for (let i = 0; i < truckSelect.options.length; i++) {
-    const option = truckSelect.options[i];
+}
+const selectedTruck = [];
+for (let i = 0; i < truckSelect.options.length; i++) {
+  const option = truckSelect.options[i];
 
-    if (option.selected) {
-      selectedTruck.push(option.value);
-    }
+  if (option.selected) {
+    selectedTruck.push(option.value);
   }
-  const selectedJanitor = [];
-  for (let i = 0; i < janitorSelect.options.length; i++) {
-    const option = janitorSelect.options[i];
+}
+const selectedJanitor = [];
+for (let i = 0; i < janitorSelect.options.length; i++) {
+  const option = janitorSelect.options[i];
 
-    if (option.selected) {
-      selectedJanitor.push(option.value);
-    }
+  if (option.selected) {
+    selectedJanitor.push(option.value);
   }
-  //Janitor
-  const janitor = [];
-  for (let i = 0; i < selectedJanitor.length; i++) {
-    const janitor_infor = {};
-    janitor_infor.id = selectedJanitor[i];
-    janitor_infor.mcp = selectedMCP[i];
-    janitor_infor.vehicle = selectedTrolley[i];
-    janitor.push(janitor_infor);
-  }
-  //Collector
-  const collector = [];
-  for (let i = 0; i < selectedCollector.length; i++) {
-    const collector_infor = {};
-    collector_infor.id = selectedCollector[i];
-    collector_infor.vehicle = selectedTruck[i];
-    collector.push(collector_infor);
-  }
-  //Route
-  const route = [];
-  for (let i = 0; i < selectedMCP.length; i++) {
-    const route_infor = {};
-    route_infor.id = String(i + 1);
-    route_infor.address = {};
-    const index = mcps.findIndex(location => location.id === selectedMCP[i]);
-    route_infor.address.location_id = mcps[index].address.location_id;
-    route_infor.address.lon = mcps[index].address.lon;
-    route_infor.address.lat = mcps[index].address.lat;
-    route.push(route_infor);
-  }
-  const return_route = {};
-  return_route.id = String(selectedMCP.length + 1);
-  return_route.address = {};
-  const return_index = mcps.findIndex(location => location.id === "MCP0004");
-  return_route.address.location_id = mcps[return_index].address.location_id;
-  return_route.address.lon = mcps[return_index].address.lon;
-  return_route.address.lat = mcps[return_index].address.lat;
-  route.push(return_route);
-  //Task Data
-  TaskSelect.id = "TASK0004";
-  TaskSelect.description = "Dọn rác khu vực " + selectedArea;
-  TaskSelect.createdBy = "BO0001";
-  TaskSelect.janitor = [];
-  for (let i = 0; i < janitor.length; i++) {
-    TaskSelect.janitor.push(janitor[i]);
-  }
-  TaskSelect.collector = [];
-  for (let i = 0; i < collector.length; i++) {
-    TaskSelect.collector.push(collector[i]);
-  }
-  TaskSelect.route = [];
-  for (let i = 0; i < route.length; i++) {
-    TaskSelect.route.push(route[i]);
-  }
-  TaskSelect.startDate = selectedDate;
-  TaskSelect.startTime = selectedStartTime;
-  TaskSelect.endTime = selectedEndTime;
-  TaskSelect.checkoutTime = "0:00"
-  TaskSelect.state = 1;
+}
+//Janitor
+const janitor = [];
+for (let i = 0; i < selectedJanitor.length; i++) {
+  const janitor_infor = {};
+  janitor_infor.id = selectedJanitor[i];
+  janitor_infor.mcp = selectedMCP[i];
+  janitor_infor.vehicle = selectedTrolley[i];
+  janitor.push(janitor_infor);
+}
+//Collector
+const collector = [];
+for (let i = 0; i < selectedCollector.length; i++) {
+  const collector_infor = {};
+  collector_infor.id = selectedCollector[i];
+  collector_infor.vehicle = selectedTruck[i];
+  collector.push(collector_infor);
+}
+//Route
+const route = [];
+for (let i = 0; i < selectedMCP.length; i++) {
+  const route_infor = {};
+  route_infor.id = String(i + 1);
+  route_infor.address = {};
+  const index = mcps.findIndex((location) => location.id === selectedMCP[i]);
+  route_infor.address.location_id = mcps[index].address.location_id;
+  route_infor.address.lon = mcps[index].address.lon;
+  route_infor.address.lat = mcps[index].address.lat;
+  route.push(route_infor);
+}
+const return_route = {};
+return_route.id = String(selectedMCP.length + 1);
+return_route.address = {};
+const return_index = mcps.findIndex((location) => location.id === "MCP0004");
+return_route.address.location_id = mcps[return_index].address.location_id;
+return_route.address.lon = mcps[return_index].address.lon;
+return_route.address.lat = mcps[return_index].address.lat;
+route.push(return_route);
+//Task Data
+TaskSelect.id = "TASK0004";
+TaskSelect.description = "Dọn rác khu vực " + selectedArea;
+TaskSelect.createdBy = getCookie("id");
+TaskSelect.janitor = [];
+for (let i = 0; i < janitor.length; i++) {
+  TaskSelect.janitor.push(janitor[i]);
+}
+TaskSelect.collector = [];
+for (let i = 0; i < collector.length; i++) {
+  TaskSelect.collector.push(collector[i]);
+}
+TaskSelect.route = [];
+for (let i = 0; i < route.length; i++) {
+  TaskSelect.route.push(route[i]);
+}
+TaskSelect.startDate = selectedDate;
+TaskSelect.startTime = selectedStartTime;
+TaskSelect.endTime = selectedEndTime;
+TaskSelect.checkoutTime = "0:00";
+TaskSelect.state = 1;
+// console.log(TaskSelect);
+
+async function postTask() {
+  await fetch("/tasks/addTask", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(TaskSelect),
+  });
+}
+
+const btn = document.getElementById("submit-btn");
+btn.addEventListener("click", async () => {
+  await postTask();
   console.log(TaskSelect);
-  // You can now use these variables to do whatever you need with the selected data
 });
 
 $(".chosen-select").trigger("chosen:updated");

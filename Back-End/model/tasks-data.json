@@ -188,11 +188,28 @@
           "lat": 10.851777
         }
       }
+    ]
+  },
+  {
+    "id": "TASK0004",
+    "description": "Dọn rác khu vực ",
+    "createdBy": "AD0000",
+    "janitor": [],
+    "collector": [],
+    "route": [
+      {
+        "id": "1",
+        "address": {
+          "location_id": "1043 Lê Đức Thọ",
+          "lon": 106.661639,
+          "lat": 10.851777
+        }
+      }
     ],
-    "startDate": "2023/01/04",
-    "startTime": "21:15",
-    "endTime": "23:30",
-    "checkoutTime": "23:38",
-    "state": "0"
+    "startDate": "",
+    "startTime": "9:00 AM",
+    "endTime": "10:00 AM",
+    "checkoutTime": "0:00",
+    "state": 1
   }
 ]

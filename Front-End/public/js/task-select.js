@@ -196,6 +196,7 @@ janitors.forEach((janitor) => {
   janitorSelect.appendChild(option);
 });
 
+
 const selectedDate = startDateSelect.value;
 const selectedStartTime = startTimeSelect.value;
 const selectedEndTime = endTimeSelect.value;
@@ -269,14 +270,6 @@ for (let i = 0; i < selectedMCP.length; i++) {
   route_infor.address.lat = mcps[index].address.lat;
   route.push(route_infor);
 }
-const return_route = {};
-return_route.id = String(selectedMCP.length + 1);
-return_route.address = {};
-const return_index = mcps.findIndex((location) => location.id === "MCP0004");
-return_route.address.location_id = mcps[return_index].address.location_id;
-return_route.address.lon = mcps[return_index].address.lon;
-return_route.address.lat = mcps[return_index].address.lat;
-route.push(return_route);
 //Task Data
 TaskSelect.id = "TASK0004";
 TaskSelect.description = "Dọn rác khu vực " + selectedArea;

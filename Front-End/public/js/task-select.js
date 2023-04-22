@@ -314,7 +314,6 @@ const btn = document.getElementById("submit-btn");
 btn.addEventListener("click", async () => {
   await postTask();
   console.log(TaskSelect);
-  
 });
 
 $(".chosen-select").trigger("chosen:updated");

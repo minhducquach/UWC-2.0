@@ -623,8 +623,11 @@ form.addEventListener("submit", (event) => {
   for (let i = 0; i < selectedMCP.length; i++) {
     TaskSelect.route.push(route[i]);
   }
+  TaskSelect.startDate = "00/00/00"
   TaskSelect.startTime = selectedStartTime;
   TaskSelect.endTime = selectedEndTime;
+  TaskSelect.checkoutTime = "0:00"
+  TaskSelect.state = 1;
   console.log(TaskSelect);
   // You can now use these variables to do whatever you need with the selected data
 });

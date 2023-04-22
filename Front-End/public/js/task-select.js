@@ -196,102 +196,105 @@ janitors.forEach((janitor) => {
   janitorSelect.appendChild(option);
 });
 
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const selectedDate = startDateSelect.value;
+  const selectedStartTime = startTimeSelect.value;
+  const selectedEndTime = endTimeSelect.value;
+  const selectedArea = areaSelect.value;
+  const selectedMCP = [];
+  for (let i = 0; i < mcpSelect.options.length; i++) {
+    const option = mcpSelect.options[i];
 
-const selectedDate = startDateSelect.value;
-const selectedStartTime = startTimeSelect.value;
-const selectedEndTime = endTimeSelect.value;
-const selectedArea = areaSelect.value;
-const selectedMCP = [];
-for (let i = 0; i < mcpSelect.options.length; i++) {
-  const option = mcpSelect.options[i];
-
-  if (option.selected) {
-    selectedMCP.push(option.value);
+    if (option.selected) {
+      selectedMCP.push(option.value);
+    }
   }
-}
-const selectedTrolley = [];
-for (let i = 0; i < trolleySelect.options.length; i++) {
-  const option = trolleySelect.options[i];
+  const selectedTrolley = [];
+  for (let i = 0; i < trolleySelect.options.length; i++) {
+    const option = trolleySelect.options[i];
 
-  if (option.selected) {
-    selectedTrolley.push(option.value);
+    if (option.selected) {
+      selectedTrolley.push(option.value);
+    }
   }
-}
-const selectedCollector = [];
-for (let i = 0; i < collectorSelect.options.length; i++) {
-  const option = collectorSelect.options[i];
+  const selectedCollector = [];
+  for (let i = 0; i < collectorSelect.options.length; i++) {
+    const option = collectorSelect.options[i];
 
-  if (option.selected) {
-    selectedCollector.push(option.value);
+    if (option.selected) {
+      selectedCollector.push(option.value);
+    }
   }
-}
-const selectedTruck = [];
-for (let i = 0; i < truckSelect.options.length; i++) {
-  const option = truckSelect.options[i];
+  const selectedTruck = [];
+  for (let i = 0; i < truckSelect.options.length; i++) {
+    const option = truckSelect.options[i];
 
-  if (option.selected) {
-    selectedTruck.push(option.value);
+    if (option.selected) {
+      selectedTruck.push(option.value);
+    }
   }
-}
-const selectedJanitor = [];
-for (let i = 0; i < janitorSelect.options.length; i++) {
-  const option = janitorSelect.options[i];
+  const selectedJanitor = [];
+  for (let i = 0; i < janitorSelect.options.length; i++) {
+    const option = janitorSelect.options[i];
 
-  if (option.selected) {
-    selectedJanitor.push(option.value);
+    if (option.selected) {
+      selectedJanitor.push(option.value);
+    }
   }
-}
-//Janitor
-const janitor = [];
-for (let i = 0; i < selectedJanitor.length; i++) {
-  const janitor_infor = {};
-  janitor_infor.id = selectedJanitor[i];
-  janitor_infor.mcp = selectedMCP[i];
-  janitor_infor.vehicle = selectedTrolley[i];
-  janitor.push(janitor_infor);
-}
-//Collector
-const collector = [];
-for (let i = 0; i < selectedCollector.length; i++) {
-  const collector_infor = {};
-  collector_infor.id = selectedCollector[i];
-  collector_infor.vehicle = selectedTruck[i];
-  collector.push(collector_infor);
-}
-//Route
-const route = [];
-for (let i = 0; i < selectedMCP.length; i++) {
-  const route_infor = {};
-  route_infor.id = String(i + 1);
-  route_infor.address = {};
-  const index = mcps.findIndex((location) => location.id === selectedMCP[i]);
-  route_infor.address.location_id = mcps[index].address.location_id;
-  route_infor.address.lon = mcps[index].address.lon;
-  route_infor.address.lat = mcps[index].address.lat;
-  route.push(route_infor);
-}
-//Task Data
-TaskSelect.id = "TASK0004";
-TaskSelect.description = "Dọn rác khu vực " + selectedArea;
-TaskSelect.createdBy = getCookie("id");
-TaskSelect.janitor = [];
-for (let i = 0; i < janitor.length; i++) {
-  TaskSelect.janitor.push(janitor[i]);
-}
-TaskSelect.collector = [];
-for (let i = 0; i < collector.length; i++) {
-  TaskSelect.collector.push(collector[i]);
-}
-TaskSelect.route = [];
-for (let i = 0; i < route.length; i++) {
-  TaskSelect.route.push(route[i]);
-}
-TaskSelect.startDate = selectedDate;
-TaskSelect.startTime = selectedStartTime;
-TaskSelect.endTime = selectedEndTime;
-TaskSelect.checkoutTime = "0:00";
-TaskSelect.state = 1;
+  //Janitor
+  const janitor = [];
+  for (let i = 0; i < selectedJanitor.length; i++) {
+    const janitor_infor = {};
+    janitor_infor.id = selectedJanitor[i];
+    janitor_infor.mcp = selectedMCP[i];
+    janitor_infor.vehicle = selectedTrolley[i];
+    janitor.push(janitor_infor);
+  }
+  //Collector
+  const collector = [];
+  for (let i = 0; i < selectedCollector.length; i++) {
+    const collector_infor = {};
+    collector_infor.id = selectedCollector[i];
+    collector_infor.vehicle = selectedTruck[i];
+    collector.push(collector_infor);
+  }
+  //Route
+  const route = [];
+  for (let i = 0; i < selectedMCP.length; i++) {
+    const route_infor = {};
+    route_infor.id = String(i + 1);
+    route_infor.address = {};
+    const index = mcps.findIndex((location) => location.id === selectedMCP[i]);
+    route_infor.address.location_id = mcps[index].address.location_id;
+    route_infor.address.lon = mcps[index].address.lon;
+    route_infor.address.lat = mcps[index].address.lat;
+    route.push(route_infor);
+  }
+  //Task Data
+  TaskSelect.id = "TASK0004";
+  TaskSelect.description = "Dọn rác khu vực " + selectedArea;
+  TaskSelect.createdBy = getCookie("id");
+  TaskSelect.janitor = [];
+  for (let i = 0; i < janitor.length; i++) {
+    TaskSelect.janitor.push(janitor[i]);
+  }
+  TaskSelect.collector = [];
+  for (let i = 0; i < collector.length; i++) {
+    TaskSelect.collector.push(collector[i]);
+  }
+  TaskSelect.route = [];
+  for (let i = 0; i < route.length; i++) {
+    TaskSelect.route.push(route[i]);
+  }
+  TaskSelect.startDate = selectedDate;
+  TaskSelect.startTime = selectedStartTime;
+  TaskSelect.endTime = selectedEndTime;
+  TaskSelect.checkoutTime = "0:00";
+  TaskSelect.state = 1;
 // console.log(TaskSelect);
+});
 
 async function postTask() {
   await fetch("/tasks/addTask", {

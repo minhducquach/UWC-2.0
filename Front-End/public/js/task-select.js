@@ -647,7 +647,7 @@ form.addEventListener("submit", (event) => {
   for (let i = 0; i < selectedMCP.length; i++) {
     TaskSelect.route.push(route[i]);
   }
-  TaskSelect.startDate = "00/00/00"
+  TaskSelect.startDate = selectedDate;
   TaskSelect.startTime = selectedStartTime;
   TaskSelect.endTime = selectedEndTime;
   TaskSelect.checkoutTime = "0:00"

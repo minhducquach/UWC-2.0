@@ -53,6 +53,15 @@ const endTimes = [
   "6:00 PM",
 ];
 
+const currentDate = new Date();
+const month = currentDate.getMonth() + 1;
+const day = currentDate.getDate();
+const year = currentDate.getFullYear();
+const hour = currentDate.getHours();
+const minute = currentDate.getMinutes();
+const formattedDate = `${year}/${month}/${day}`;
+const formattedHour = `${hour}:${minute.toString().padStart(2, "0")}`;
+
 const areas = ["Quận Gò Vấp"];
 
 let mcps = [];
@@ -289,6 +298,8 @@ summitBtn.addEventListener("click", async (event) => {
   TaskSelect.id = "TASK0004";
   TaskSelect.description = description;
   TaskSelect.createdBy = getCookie("id");
+  TaskSelect.createdDate = formattedDate;
+  TaskSelect.createdHour = formattedHour;
   TaskSelect.janitor = [];
   for (let i = 0; i < janitor.length; i++) {
     TaskSelect.janitor.push(janitor[i]);

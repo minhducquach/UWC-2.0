@@ -1,8 +1,45 @@
 [
   {
+    "id": "TASK0004",
+    "description": "ad",
+    "createdBy": "AD0000",
+    "createdDate": "4/23/2023",
+    "createdHour": "22:06",
+    "janitor": [
+      {
+        "id": "JN0001",
+        "mcp": "MCP0001",
+        "vehicle": "TR0001"
+      }
+    ],
+    "collector": [
+      {
+        "id": "CO0001",
+        "vehicle": "TK0002"
+      }
+    ],
+    "route": [
+      {
+        "id": "1",
+        "address": {
+          "location_id": "132 Lê Văn Thọ",
+          "lon": 106.657142,
+          "lat": 10.844348
+        }
+      }
+    ],
+    "startDate": "2023-04-14",
+    "startTime": "9:00 AM",
+    "endTime": "10:00 AM",
+    "checkoutTime": "0:00",
+    "state": 1
+  },
+  {
     "id": "TASK0001",
     "description": "Dọn rác khu vực quận Gò Vấp",
     "createdBy": "BO0001",
+    "createdDate": "2023/02/25",
+    "createdHour": "09:23",
     "janitor": [
       {
         "id": "JN0001",
@@ -65,6 +102,8 @@
     "id": "TASK0002",
     "description": "Dọn rác khu vực quận Gò Vấp II",
     "createdBy": "BO0001",
+    "createdDate": "2023/02/25",
+    "createdHour": "09:23",
     "janitor": [
       {
         "id": "JN0003",
@@ -132,6 +171,8 @@
     "id": "TASK0003",
     "description": "Dọn rác khu vực quận Gò Vấp III",
     "createdBy": "BO0001",
+    "createdDate": "2023/02/25",
+    "createdHour": "09:23",
     "janitor": [
       {
         "id": "JN0003",

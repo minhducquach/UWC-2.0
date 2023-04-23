@@ -110,8 +110,8 @@ if (result) {
         </div>
         <div class = "item_info">
             <div class = "name_info">Ngày khởi tạo</div>
-            <div class = "contain_info">2023/02/25</div>
-            <div class = "contain_info">09:23</div>
+            <div class = "contain_info">${result.createdDate}</div>
+            <div class = "contain_info">${result.createdHour}</div>
         </div>
     </div>
     <div style = "display: flex; flex-direction: row; gap: 3rem;">

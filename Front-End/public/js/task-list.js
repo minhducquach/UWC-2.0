@@ -113,7 +113,18 @@ let tasks = await fetch("/tasks/getAllTasks")
     TASK_LIST = data;
   })
   .catch((error) => console.error(error));
-
+//Sort TASK_LIST by startDate 
+TASK_LIST.sort((a, b) => {
+  let dateA = new Date(a.startDate);
+  let dateB = new Date(b.startDate);
+  //If same date, sort by startTime
+  if (dateA === dateB) {
+    let timeA = new Date(a.startTime);
+    let timeB = new Date(b.startTime);
+    return timeA - timeB;
+  }
+  return dateB - dateA;
+});
 const ROWS_PER_PAGE = 10;
 function renderTable(start) {
   let table = document.querySelector(".task-detail-table");
@@ -142,10 +153,10 @@ function renderTable(start) {
             <td>${task.startTime}</td>`;
     if (task.state === "0") {
       html += `<td class="incompleted-task">Chưa hoàn thành</td>`;
-    } 
+    }
     else if (task.state === "2") {
       html += `<td class="completed-task">Đã hoàn thành</td>`;
-    } 
+    }
     else {
       html += `<td class="waiting-task">Đang tiến hành</td>`;
     }

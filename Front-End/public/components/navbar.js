@@ -13,10 +13,10 @@ $(document).ready(function () {
                 <li class="nav-item dropdown"> \
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a> \
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> \
-                        <li><a class="dropdown-item" href="#!">Settings</a></li> \
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li> \
+                        <li><a class="dropdown-item" href="#!">Cài đặt</a></li> \
+                        <li><a class="dropdown-item" href="#!">Lịch sử hoạt động</a></li> \
                         <li><hr class="dropdown-divider" /></li> \
-                        <li><a class="dropdown-item logout-btn" href="/logout" method="get">Logout</a></li> \
+                        <li><a class="dropdown-item logout-btn" href="/logout" method="get">Đăng xuất</a></li> \
                     </ul> \
                 </li> \
             </ul> \

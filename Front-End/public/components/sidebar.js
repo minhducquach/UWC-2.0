@@ -36,7 +36,14 @@ $(document).ready(function () {
                             <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                             Quản lý phương tiện
                         </a>
-                        
+                        <a class="nav-link" href="/dashboard" method="get">
+                        <div class="sb-nav-link-icon"><i class="fa fa-users"></i></div>
+                        Quản lý nhân lực
+                    </a>
+                    <a class="nav-link" href="/dashboard" method="get">
+                        <div class="sb-nav-link-icon"><i class="fa fa-user-circle"></i></div>
+                        Quản lý tài khoản
+                    </a>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">

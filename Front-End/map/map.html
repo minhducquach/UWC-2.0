@@ -3,7 +3,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/map.css" />
+    <link rel="stylesheet" href="../css/generalInfo.css" />
     <title>create map</title>
     <!-- add lib -->
     <link
@@ -17,11 +19,77 @@
       crossorigin=""
     />
     <link rel="stylesheet" href="../css/leaflet_numbered_markers.css" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
-  <body>
-    <div id="map"></div>
-    <button id="get-route">Get route</button>
+  <body class="sb-nav-fixed">
+    <div id="layoutSidenav">
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="layer">
+            <nav class="navbar_detailInfo">
+              <div class="view_detail"></div>
+              <div class="view_detail update-task"></div>
+              <div class="go_back">
+                <a href="/tasks">
+                  <img
+                    src="../assets/img/out_overview_task.png"
+                    style="height: 5rem; margin-top: 1.5rem"
+                  />
+                </a>
+                <p style="margin-top: 0.5rem; font-size: 22px">Quay lại</p>
+              </div>
+            </nav>
+            <div class="container-fluid">
+              <!-- Header -->
+              <!-- <div class="header sticky-top">Header here</div> -->
+              <!-- Header end -->
+              <!-- Body -->
+              <h1 class="my-3" style="color: white; font-weight: bold">
+                Tuyến đường thu gom
+              </h1>
+
+              <div id="map"></div>
+              <button id="get-route">Get route</button>
+              <!-- Script -->
+              <!-- jQuery -->
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+              <!-- leaflet -->
+              <script
+                src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+                integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+                crossorigin=""
+              ></script>
+              <script type="module" src="../js/map.js"></script>
+              <!-- routing machine -->
+              <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+              <script
+                type="module"
+                src="../js/leaflet_numbered_markers.js"
+              ></script>
+              <!-- Body end -->
+            </div>
+          </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid px-4">
+            <div
+              class="d-flex align-items-center justify-content-between small"
+            >
+              <div class="text-muted">Copyright &copy; Your Website 2023</div>
+              <div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
     <!-- Script -->
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -35,5 +103,9 @@
     <!-- routing machine -->
     <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
     <script type="module" src="../js/leaflet_numbered_markers.js"></script>
+    <script src="../components/sidebar.js"></script>
+    <script src="../components/navbar.js"></script>
+    <script src="../js/hide-side-bar.js"></script>
+    <!-- <script type="module" src="../js/overview_task_detail_Staff.js"></script> -->
   </body>
 </html>

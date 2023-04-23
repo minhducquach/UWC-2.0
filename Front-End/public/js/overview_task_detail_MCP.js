@@ -9,7 +9,8 @@ document.querySelector(".view_detail").innerHTML = insertIDTask;
 const insertIDUpdate = `
 <div class="title_list">Chỉnh sửa công việc</div>
 <a class = "item_nav update-task-link"  href="/tasks/updateTask?id=${taskCode}">Chỉnh sửa công việc</a>
-<a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>`;
+<button id="delete" class = "item_nav"style = "color: #d82f2f;">Xóa công việc</button>
+`;
 document.querySelector(".update-task").innerHTML = insertIDUpdate;
 let result;
 let task = await fetch(`/tasks/getTask/${taskCode}`)
@@ -74,3 +75,19 @@ if (result) {
   }
   document.querySelector(".info_table").innerHTML = contain;
 }
+
+const deleteBtn = document.getElementById("delete");
+deleteBtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  if (confirm("Bạn có chắc muốn xóa công việc này ?") == true) {
+    await fetch(`/tasks/deleteTask/${taskCode}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    alert("Xóa công việc thành công");
+    window.location.href = "/tasks";
+  }
+});

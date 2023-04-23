@@ -9,7 +9,8 @@ document.querySelector(".view_detail").innerHTML = insertIDTask;
 const insertIDUpdate = `
 <div class="title_list">Chỉnh sửa công việc</div>
 <a class = "item_nav update-task-link"  href="/tasks/updateTask?id=${taskCode}">Chỉnh sửa công việc</a>
-<a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>`;
+<button id="delete" class = "item_nav"style = "color: #d82f2f;">Xóa công việc</button>
+`;
 document.querySelector(".update-task").innerHTML = insertIDUpdate;
 let result;
 let task = await fetch(`/tasks/getTask/${taskCode}`)
@@ -45,7 +46,9 @@ let col = await fetch("/staffs/getAllCollectors")
   })
   .catch((error) => console.error(error));
 //Filter out the collectors who are not in this task
-collectors = collectors.filter((collector) => collectorIDs.includes(collector.id));
+collectors = collectors.filter((collector) =>
+  collectorIDs.includes(collector.id)
+);
 console.log(collectors.length);
 if (result) {
   var contain = ``;
@@ -95,9 +98,24 @@ if (result) {
           <td class = "info_item">${janitors[i].phone}</td>
           <td class = "info_item">${result.janitor[i].vehicle}</td>
       </tr>`;
-
   }
   contain += `</table>
     </div>`;
   document.querySelector(".detail_info").innerHTML = contain;
 }
+
+const deleteBtn = document.getElementById("delete");
+deleteBtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  if (confirm("Bạn có chắc muốn xóa công việc này ?") == true) {
+    await fetch(`/tasks/deleteTask/${taskCode}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    alert("Xóa công việc thành công");
+    window.location.href = "/tasks";
+  }
+});

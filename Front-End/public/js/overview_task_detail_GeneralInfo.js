@@ -3,7 +3,7 @@ function decimalAdjust(type, value, exp) {
   type = String(type);
   if (!["round", "floor", "ceil"].includes(type)) {
     throw new TypeError(
-      "The type of decimal adjustment must be one of 'round', 'floor', or 'ceil'.",
+      "The type of decimal adjustment must be one of 'round', 'floor', or 'ceil'."
     );
   }
   exp = Number(exp);
@@ -32,7 +32,11 @@ document.querySelector(".view_detail").innerHTML = insertIDTask;
 const insertIDUpdate = `
 <div class="title_list">Chỉnh sửa công việc</div>
 <a class = "item_nav update-task-link"  href="/tasks/updateTask?id=${taskCode}">Chỉnh sửa công việc</a>
-<a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>`;
+<button id="delete" class = "item_nav"style = "color: #d82f2f;">Xóa công việc</button>
+`;
+{
+  /* <a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>`; */
+}
 document.querySelector(".update-task").innerHTML = insertIDUpdate;
 let result;
 let task = await fetch(`/tasks/getTask/${taskCode}`)
@@ -139,7 +143,7 @@ if (result) {
         </div>
         <div class = "item_info">
             <div class = "name_info">Quãng đường</div>
-            <div class = "contain_info">${round10(distance/1000,-2)} Km</div>
+            <div class = "contain_info">${round10(distance / 1000, -2)} Km</div>
         </div>
     </div>
     <div style = "display: flex; flex-direction: row; gap: 3rem;">
@@ -172,3 +176,19 @@ if (result) {
     </div>`;
   document.querySelector(".detail_info").innerHTML = contain;
 }
+
+const deleteBtn = document.getElementById("delete");
+deleteBtn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  if (confirm("Bạn có chắc muốn xóa công việc này ?") == true) {
+    await fetch(`/tasks/deleteTask/${taskCode}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    alert("Xóa công việc thành công");
+    window.location.href = "/tasks";
+  }
+});

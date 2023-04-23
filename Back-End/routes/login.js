@@ -12,7 +12,7 @@ router.post("/login", loginController.login, (req, res) => {
   res.cookie("token", token);
   res.cookie("role", role);
   res.cookie("id", id);
-  res.redirect(`/dashboard`);
+  res.redirect(`/tasks`);
 });
 router.get("/logout", (req, res) => {
   res.clearCookie("token");

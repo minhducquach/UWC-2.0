@@ -99,7 +99,7 @@ async function postTask() {
 }
 
 await getData();
-console.log(mcps);
+// console.log(mcps);
 const TaskSelect = {};
 // Get references to form elements
 const startDateSelect = document.getElementById("start-date");
@@ -209,7 +209,7 @@ janitors.forEach((janitor) => {
 const summitBtn = document.querySelector("#submit-btn");
 summitBtn.addEventListener("click", async (event) => {
   event.preventDefault();
-  console.log("click")
+  console.log("click");
   const description = descriptionInput.value;
   const selectedDate = startDateSelect.value;
   const selectedStartTime = startTimeSelect.value;
@@ -306,12 +306,12 @@ summitBtn.addEventListener("click", async (event) => {
   TaskSelect.endTime = selectedEndTime;
   TaskSelect.checkoutTime = "0:00";
   TaskSelect.state = 1;
-// console.log(TaskSelect);
-if (confirm("Bạn có muốn tạo công việc này ?") == true) {
-  await postTask();
-  window.location.href = '/tasks';
-} 
+  // console.log(TaskSelect);
+  if (confirm("Bạn có muốn tạo công việc này ?") == true) {
+    await postTask();
+    alert("Tạo công việc thành công");
+    window.location.href = "/tasks";
+  }
 });
-
 
 $(".chosen-select").trigger("chosen:updated");

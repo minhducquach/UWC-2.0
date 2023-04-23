@@ -197,7 +197,7 @@ janitors.forEach((janitor) => {
 });
 
 const form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
+//form.addEventListener("submit", (event) => {
 form.addEventListener("save", (event) => {
  // document.getElementById("submit-btn").disabled=false;
   event.preventDefault();

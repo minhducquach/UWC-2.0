@@ -133,6 +133,7 @@ function renderTable(start) {
   html += `<tr>
                 <th>STT</th>
                 <th>Mã công việc</th>
+                <th>Mô tả</th>
                 <th>Ngày</th>
                 <th>Bắt đầu</th>
                 <th>Trạng thái</th>
@@ -149,6 +150,7 @@ function renderTable(start) {
     html += `<tr>
             <td>${i + 1}</td>
             <td>${task.id}</td>
+            <td style="text-align: left">${task.description}</td>
             <td>${task.startDate}</td>
             <td>${task.startTime}</td>`;
     if (task.state === "0") {

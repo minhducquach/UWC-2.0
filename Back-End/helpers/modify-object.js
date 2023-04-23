@@ -26,7 +26,8 @@ const modifyObject = ({ fileName, objectID, newObject }) => {
   });
   if (index != -1) {
     if (newObject) {
-      data[index] = newObject;
+      data.splice(index, 1)
+      data.unshift(newObject)
       saveJSON(fileName, data);
       return 1;
     }
@@ -39,7 +40,7 @@ const createObject = ({ fileName, newObject }) => {
     return object.id === newObject.id;
   });
   if (index == -1) {
-    data.push(newObject);
+    data.unshift(newObject);
     saveJSON(fileName, data);
     return 1;
   } else {
@@ -56,7 +57,7 @@ const createObject = ({ fileName, newObject }) => {
       });
     }
     newObject.id = newTaskID;
-    data.push(newObject);
+    data.unshift(newObject);
     saveJSON(fileName, data);
   }
   return 0;

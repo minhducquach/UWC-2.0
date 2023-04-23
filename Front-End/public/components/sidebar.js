@@ -22,19 +22,19 @@ $(document).ready(function () {
                         <div class="sb-sidenav-menu-heading">Core</div>
                         <a class="nav-link" href="/dashboard" method="get">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                            Bảng điều khiển
                         </a>
                         <a class="nav-link" href="/tasks" method="get">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tasks Management
+                            Quản lý nhiệm vụ
                         </a>
                         <a class="nav-link" href="/mcps" method="get">
                             <div class="sb-nav-link-icon"><i class="fas fa-trash"></i></div>
-                            MCPs Management
+                            Quản lý MCP
                         </a>
                         <a class="nav-link" href="/vehicles" method="get">
                             <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
-                            Vehicles Management
+                            Quản lý phương tiện
                         </a>
                         
                     </div>

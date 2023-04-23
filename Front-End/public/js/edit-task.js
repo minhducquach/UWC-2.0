@@ -39,6 +39,10 @@ function getCookie(cname) {
     "3:00 PM",
     "4:00 PM",
     "5:00 PM",
+    "6:00 PM",
+    "7:00 PM",
+    "8:00 PM",
+    "9:00 PM",
   ];
   
   const endTimes = [
@@ -51,6 +55,9 @@ function getCookie(cname) {
     "4:00 PM",
     "5:00 PM",
     "6:00 PM",
+    "7:00 PM",
+    "8:00 PM",
+    "9:00 PM",
   ];
   
   const areas = ["Quận Gò Vấp"];
@@ -243,12 +250,12 @@ function getCookie(cname) {
             collectorPicked.push(e.id);
             truckPicked.push(e.vehicle);
         });
-        $('#trolleys').val(trolleyPicked)
-        $('#janitors').val(janitorPicked)
-        $('#mcps').val(mcpPicked)
-        $('#collectors').val(collectorPicked)
-        $('#trucks').val(truckPicked)
-        $('#area').val("Quận Gò Vấp")
+        $('#trolleys').val(trolleyPicked);
+        $('#janitors').val(janitorPicked);
+        $('#mcps').val(mcpPicked);
+        $('#collectors').val(collectorPicked);
+        $('#trucks').val(truckPicked);
+        $('#area').val("Quận Gò Vấp");
 
         descriptionInput.value = taskData.description;
     //handle submit

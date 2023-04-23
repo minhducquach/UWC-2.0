@@ -39,6 +39,9 @@ const returnTaskMCP = async (req, res) => {
 const returnAddTask = async (req, res) => {
   res.sendFile(path.join(initialPath, "/add-task.html"));
 };
+const returnUpdateTask = async (req, res) => {
+  res.sendFile(path.join(initialPath, "/edit-task.html"));
+};
 
 const returnTaskStaff = async (req, res) => {
   res.sendFile(
@@ -62,4 +65,5 @@ export default {
   returnTaskStaff,
   returnAddTask,
   returnTaskRoute,
+  returnUpdateTask
 };

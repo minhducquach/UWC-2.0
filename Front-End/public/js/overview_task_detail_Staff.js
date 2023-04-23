@@ -6,6 +6,11 @@ const insertIDTask = `<div class="title_list">Xem chi tiết công việc</div>
 <a href="./MCP?id=${taskCode}" class="item_nav">Danh sách điểm thu gom</a>
 <a href="./route?id=${taskCode}" class="item_nav">Tuyến đường di chuyển</a>`;
 document.querySelector(".view_detail").innerHTML = insertIDTask;
+const insertIDUpdate = `
+<div class="title_list">Chỉnh sửa công việc</div>
+<a class = "item_nav update-task-link"  href="/tasks/updateTask?id=${taskCode}">Chỉnh sửa công việc</a>
+<a class = "item_nav" style = "color: #d82f2f">Xóa công việc</a>`;
+document.querySelector(".update-task").innerHTML = insertIDUpdate;
 let result;
 let task = await fetch(`/tasks/getTask/${taskCode}`)
   .then((response) => response.json())

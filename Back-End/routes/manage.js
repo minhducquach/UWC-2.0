@@ -16,5 +16,6 @@ router.get("/tasks/MCP", manageController.returnTaskMCP);
 router.get("/tasks/Staff", manageController.returnTaskStaff);
 router.get("/tasks/route", manageController.returnTaskRoute);
 router.get("/tasks/addTask", manageController.returnAddTask);
+router.get("/tasks/updateTask?:id", manageController.returnUpdateTask);
 
 export default router;

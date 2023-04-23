@@ -134,25 +134,25 @@
     "createdBy": "BO0001",
     "janitor": [
       {
-        "id": "JN0006",
-        "mcp": "MCP0007",
-        "vehicle": "TR0006"
+        "id": "JN0003",
+        "mcp": "MCP0001",
+        "vehicle": "TR0003"
       },
       {
-        "id": "JN0007",
-        "mcp": "MCP0008",
-        "vehicle": "TR0007"
+        "id": "JN0004",
+        "mcp": "MCP0004",
+        "vehicle": "TR0004"
       },
       {
-        "id": "JN0008",
-        "mcp": "MCP0009",
-        "vehicle": "TR0008"
+        "id": "JN0005",
+        "mcp": "MCP0006",
+        "vehicle": "TR0005"
       }
     ],
     "collector": [
       {
-        "id": "CO0005",
-        "vehicle": "TK0003"
+        "id": "CO0002",
+        "vehicle": "TK0001"
       }
     ],
     "route": [
@@ -188,7 +188,11 @@
           "lat": 10.851777
         }
       }
-    ]
-  },
-  {}
+    ],
+    "startDate": "2023/01/03",
+    "startTime": "20:00",
+    "endTime": "21:30",
+    "checkoutTime": "21:14",
+    "state": "2"
+  }
 ]

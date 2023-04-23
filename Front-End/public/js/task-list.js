@@ -124,7 +124,6 @@ function renderTable(start) {
                 <th>Mã công việc</th>
                 <th>Ngày</th>
                 <th>Bắt đầu</th>
-                <th>Hoàn thành</th>
                 <th>Trạng thái</th>
                 <th>Quản lý</th>
             </tr>`;
@@ -140,8 +139,7 @@ function renderTable(start) {
             <td>${i + 1}</td>
             <td>${task.id}</td>
             <td>${task.startDate}</td>
-            <td>${task.startTime}</td>
-            <td>${task.finishTime_Expected}</td>`;
+            <td>${task.startTime}</td>`;
     if (task.state === "0") {
       html += `<td class="incompleted-task">Chưa hoàn thành</td>`;
     } 

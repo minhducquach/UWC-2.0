@@ -24,10 +24,6 @@ $(document).ready(function () {
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link" href="/charts" method="get">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Charts
-                        </a>
                         <a class="nav-link" href="/tasks" method="get">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tasks Management

@@ -42,6 +42,22 @@ const createObject = ({ fileName, newObject }) => {
     data.push(newObject);
     saveJSON(fileName, data);
     return 1;
+  } else {
+    let newTaskID = ''
+    console.log(newObject.id);
+    let current = Number(newObject.id.slice(-4));
+    let result = 1;
+    while (result != -1) {
+      current += 1;
+      newTaskID = String(current).padStart(4, '0');
+      newTaskID = 'TASK' + newTaskID;
+      result = data.findIndex((object) => {
+        return object.id === newTaskID;
+      });
+    }
+    newObject.id = newTaskID;
+    data.push(newObject);
+    saveJSON(fileName, data);
   }
   return 0;
 };

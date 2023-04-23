@@ -88,6 +88,15 @@ async function getData() {
     })
     .catch((error) => console.error(error));
 }
+async function postTask() {
+  await fetch("/tasks/addTask", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(TaskSelect),
+  });
+}
 
 await getData();
 console.log(mcps);
@@ -102,6 +111,7 @@ const trolleySelect = document.getElementById("trolleys");
 const collectorSelect = document.getElementById("collectors");
 const truckSelect = document.getElementById("trucks");
 const janitorSelect = document.getElementById("janitors");
+const descriptionInput = document.getElementById("description-input");
 /*
 function clickbutton(){
   var result = confirm("Bạn có muốn thêm công việc?");
@@ -196,9 +206,11 @@ janitors.forEach((janitor) => {
   janitorSelect.appendChild(option);
 });
 
-const form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
+const summitBtn = document.querySelector("#submit-btn");
+summitBtn.addEventListener("click", async (event) => {
   event.preventDefault();
+  console.log("click")
+  const description = descriptionInput.value;
   const selectedDate = startDateSelect.value;
   const selectedStartTime = startTimeSelect.value;
   const selectedEndTime = endTimeSelect.value;
@@ -273,8 +285,9 @@ form.addEventListener("submit", (event) => {
     route.push(route_infor);
   }
   //Task Data
+
   TaskSelect.id = "TASK0004";
-  TaskSelect.description = "Dọn rác khu vực " + selectedArea;
+  TaskSelect.description = description;
   TaskSelect.createdBy = getCookie("id");
   TaskSelect.janitor = [];
   for (let i = 0; i < janitor.length; i++) {
@@ -294,22 +307,11 @@ form.addEventListener("submit", (event) => {
   TaskSelect.checkoutTime = "0:00";
   TaskSelect.state = 1;
 // console.log(TaskSelect);
-});
-
-async function postTask() {
-  await fetch("/tasks/addTask", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(TaskSelect),
-  });
-}
-
-const btn = document.getElementById("submit-btn");
-btn.addEventListener("click", async () => {
+if (confirm("Bạn có muốn tạo công việc này ?") == true) {
   await postTask();
-  console.log(TaskSelect);
+  window.location.href = '/tasks';
+} 
 });
+
 
 $(".chosen-select").trigger("chosen:updated");

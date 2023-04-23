@@ -198,6 +198,8 @@ janitors.forEach((janitor) => {
 
 const form = document.querySelector("form");
 form.addEventListener("submit", (event) => {
+form.addEventListener("save", (event) => {
+ // document.getElementById("submit-btn").disabled=false;
   event.preventDefault();
   const selectedDate = startDateSelect.value;
   const selectedStartTime = startTimeSelect.value;
@@ -295,7 +297,6 @@ form.addEventListener("submit", (event) => {
   TaskSelect.state = 1;
 // console.log(TaskSelect);
 });
-
 async function postTask() {
   await fetch("/tasks/addTask", {
     method: "POST",

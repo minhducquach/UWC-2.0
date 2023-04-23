@@ -21,7 +21,7 @@ const insertIDUpdate = `
 <button id="delete" class = "item_nav"style = "color: #d82f2f;">Xóa công việc</button>
 `;
 document.querySelector(".update-task").innerHTML = insertIDUpdate;
-
+document.querySelector(".route-title").innerText = "Tuyến đường thu gom cho " + taskCode;
 let task_data;
 let task = await fetch(`/tasks/getTask/${taskCode}`)
   .then((response) => response.json())

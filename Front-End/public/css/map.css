@@ -14,8 +14,8 @@ body {
 
 #map {
     border: 2px solid black;
-    width: 60% !important;
-    height: 75% !important;
+    width: 100% !important;
+    height: 85% !important;
 }
 
 #get-route {

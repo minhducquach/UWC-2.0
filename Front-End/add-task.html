@@ -1,217 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Tạo mới nhiệm vụ</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css"
-      rel="stylesheet"
-    />
-    <link href="../css/styles.css" rel="stylesheet" />
-    <!--<link href="./styles.css" rel="stylesheet" /> -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
-    <link rel="stylesheet" href="../css/add-task.css" />
-    <!--<link rel="stylesheet" href="./add-task.css" /> -->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
-    <link
-      href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-  </head>
-  <body class="sb-nav-fixed">
-    <div id="layoutSidenav">
-      <div id="layoutSidenav_content">
-        <main>
-          <div class="container">
-            <div class="form-block">
-              <h2 class="text-center text-white mb-4">Tạo mới nhiệm vụ</h2>
-              <form>
-                <div class="form-group">
-                  <label for="startDate" class="form-label">Chọn ngày:</label>
-                  <input
-                    type="date"
-                    id="start-date"
-                    name="startDate"
-                    class="form-control"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="startTime" class="form-label"
-                    >Giờ bắt đầu công việc:</label
-                  >
-                  <select
-                    type="datetime-local"
-                    id="start-time"
-                    name="startTime"
-                    class="form-control"
-                    data-placeholder="Chọn giờ bắt đầu thực hiện công việc"
-                  ></select>
-                </div>
-                <div class="form-group">
-                  <label for="endTime" class="form-label"
-                    >Giờ kết thúc công việc:</label
-                  >
-                  <select
-                    type="datetime-local"
-                    id="end-time"
-                    name="endTime"
-                    class="form-control"
-                    data-placeholder="Chọn giờ kết thúc công việc"
-                  ></select>
-                </div>
-                <!--Description -->
-                <div class="form-group">
-                  <label for="description" class="form-label">
-                    Mô tả ngắn về công việc:
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="description-input"
-                  />
-                </div>
-                <!--Area-->
-                <div class="form-group">
-                  <label for="area'" class="form-label"
-                    >Chọn khu vực thực hiện công việc:</label
-                  >
-                  <select
-                    multiple
-                    id="area"
-                    name="area"
-                    class="chosen-select form-control"
-                    data-placeholder="Chọn quận"
-                  ></select>
-                </div>
-                <!--MCPs-->
-                <div class="form-group">
-                  <label for="area" class="form-label">Chọn MCPs:</label>
-                  <select
-                    multiple
-                    id="mcps"
-                    name="mcps"
-                    class="chosen-select form-control"
-                    data-placeholder="Chọn MCP"
-                  ></select>
-                </div>
-                <!--Trolleys-->
-                <div class="form-group">
-                  <label for="area" class="form-label">Chọn Trolleys:</label>
-                  <select
-                    multiple
-                    id="trolleys"
-                    name="trolleys"
-                    class="chosen-select form-control"
-                    data-placeholder="Chọn Trolley"
-                  ></select>
-                </div>
-                <!--Janitor -->
-                <div class="form-group">
-                  <label for="area" class="form-label">Chọn Janitor:</label>
-                  <select
-                    multiple
-                    id="janitors"
-                    name="janitors"
-                    class="chosen-select form-control"
-                    data-placeholder="Chọn Janitor"
-                  ></select>
-                </div>
-                <!-- Trucks -->
-                <div class="form-group">
-                  <label for="area" class="form-label">Chọn xe :</label>
-                  <select
-                    multiple
-                    id="trucks"
-                    name="trucks"
-                    class="chosen-select form-control"
-                    data-placeholder="Chọn xe"
-                  ></select>
-                </div>
-                <!--Collectors -->
-                <div class="form-group">
-                  <label for="area" class="form-label">Chọn Collectors:</label>
-                  <select
-                    multiple
-                    id="collectors"
-                    name="collectors"
-                    class="chosen-select form-control"
-                    data-placeholder="Chọn Collector"
-                  ></select>
-                </div>
-                <!--Buttons -->
-                <!-- <button
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Tạo mới nhiệm vụ</title>
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+  <link href="../css/styles.css" rel="stylesheet" />
+  <!--<link href="./styles.css" rel="stylesheet" /> -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" href="../css/add-task.css" />
+  <!--<link rel="stylesheet" href="./add-task.css" /> -->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+  <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+</head>
+
+<body class="sb-nav-fixed">
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container">
+          <div class="form-block">
+            <h2 class="text-center text-white mb-4">Tạo mới nhiệm vụ</h2>
+            <form>
+              <div class="form-group">
+                <label for="startDate" class="form-label">Chọn ngày:</label>
+                <input type="date" id="start-date" name="startDate" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="startTime" class="form-label">Giờ bắt đầu công việc:</label>
+                <select type="datetime-local" id="start-time" name="startTime" class="form-control"
+                  data-placeholder="Chọn giờ bắt đầu thực hiện công việc"></select>
+              </div>
+              <div class="form-group">
+                <label for="endTime" class="form-label">Giờ kết thúc công việc:</label>
+                <select type="datetime-local" id="end-time" name="endTime" class="form-control"
+                  data-placeholder="Chọn giờ kết thúc công việc"></select>
+              </div>
+              <!--Description -->
+              <div class="form-group">
+                <label for="description" class="form-label">
+                  Mô tả ngắn về công việc:
+                </label>
+                <input type="text" class="form-control" id="description-input" />
+              </div>
+              <!--Area-->
+              <div class="form-group">
+                <label for="area'" class="form-label">Chọn khu vực thực hiện công việc:</label>
+                <select multiple id="area" name="area" class="chosen-select form-control"
+                  data-placeholder="Chọn quận"></select>
+              </div>
+              <!--MCPs-->
+              <div class="form-group">
+                <label for="area" class="form-label">Chọn MCPs:</label>
+                <select multiple id="mcps" name="mcps" class="chosen-select form-control"
+                  data-placeholder="Chọn MCP"></select>
+              </div>
+              <!--Trolleys-->
+              <div class="form-group">
+                <label for="area" class="form-label">Chọn Trolleys:</label>
+                <select multiple id="trolleys" name="trolleys" class="chosen-select form-control"
+                  data-placeholder="Chọn Trolley"></select>
+              </div>
+              <!--Janitor -->
+              <div class="form-group">
+                <label for="area" class="form-label">Chọn Janitor:</label>
+                <select multiple id="janitors" name="janitors" class="chosen-select form-control"
+                  data-placeholder="Chọn Janitor"></select>
+              </div>
+              <!-- Trucks -->
+              <div class="form-group">
+                <label for="area" class="form-label">Chọn xe :</label>
+                <select multiple id="trucks" name="trucks" class="chosen-select form-control"
+                  data-placeholder="Chọn xe"></select>
+              </div>
+              <!--Collectors -->
+              <div class="form-group">
+                <label for="area" class="form-label">Chọn Collectors:</label>
+                <select multiple id="collectors" name="collectors" class="chosen-select form-control"
+                  data-placeholder="Chọn Collector"></select>
+              </div>
+              <!--Buttons -->
+              <!-- <button
                   type="submit"
                   class="btn btn-primary submit-btn"
                   id="submit-btn"
                 > -->
-                <button class="btn btn-primary submit-btn" id="submit-btn">
-                  Lưu lựa chọn
-                </button>
-              </form>
+              <button class="btn btn-primary submit-btn" id="submit-btn">
+                Lưu lựa chọn
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">
+              Copyright &copy; Group Random - SE 222
+            </div>
+            <div>
+              <a href="#">Quyền riêng tư</a>
+              &middot;
+              <a href="#">Điều khoản &amp; Điều kiện</a>
             </div>
           </div>
-        </main>
-        <footer class="py-4 bg-light mt-auto">
-          <div class="container-fluid px-4">
-            <div
-              class="d-flex align-items-center justify-content-between small"
-            >
-              <div class="text-muted">
-                Copyright &copy; Group Random - SE 222
-              </div>
-              <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
-    <script>
-      // JavaScript code for registering form submission
-      $(".chosen-select").chosen({
-        no_results_text: "Oops, nothing found!",
-      });
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <!--<script src="./datatables-simple-demo.js"></script
+  </div>
+  <script>
+    // JavaScript code for registering form submission
+    $(".chosen-select").chosen({
+      no_results_text: "Oops, nothing found!",
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+    crossorigin="anonymous"></script>
+  <!--<script src="./datatables-simple-demo.js"></script
     <script src="../js/task-list.js"></script> 
      <script src="./sidebar.js"></script>
     <script src="./navbar.js"></script>
     <script src="./hide-side-bar.js"></script> -->
-    <script src="../js/datatables-simple-demo.js"></script>
-    <script type="module" src="../js/task-select.js"></script>
-    <script src="../components/sidebar.js"></script>
-    <script src="../components/navbar.js"></script>
-    <script src="../js/hide-side-bar.js"></script>
-    <!--<script src="../js/taskselect.js"></script> -->
-  </body>
+  <script src="../js/datatables-simple-demo.js"></script>
+  <script type="module" src="../js/task-select.js"></script>
+  <script src="../components/sidebar.js"></script>
+  <script src="../components/navbar.js"></script>
+  <script src="../js/hide-side-bar.js"></script>
+  <!--<script src="../js/taskselect.js"></script> -->
+</body>
+
 </html>

@@ -68,6 +68,7 @@ let mcps = [];
 let vehicles = [];
 let janitors = [];
 let collectors = [];
+let states = [0, 1, 2];
 async function getData() {
   let mcp = await fetch("/mcps/getAllMCPs")
     .then((response) => response.json())
@@ -121,6 +122,7 @@ const collectorSelect = document.getElementById("collectors");
 const truckSelect = document.getElementById("trucks");
 const janitorSelect = document.getElementById("janitors");
 const descriptionInput = document.getElementById("description-input");
+const taskState = document.getElementById("state");
 /*
 function clickbutton(){
   var result = confirm("Bạn có muốn thêm công việc?");
@@ -214,6 +216,16 @@ janitors.forEach((janitor) => {
   option.text = janitor.id;
   janitorSelect.appendChild(option);
 });
+states.forEach((state) => {
+  const option = document.createElement("option");
+  option.value = state;
+  if (state == 0) {
+    option.text = "Chưa hoàn thành";
+  } else if (state == 1) {
+    option.text = "Đang tiến hành";
+  } else option.text = "Đã hoàn thành";
+  taskState.appendChild(option);
+});
 
 const summitBtn = document.querySelector("#submit-btn");
 summitBtn.addEventListener("click", async (event) => {
@@ -262,6 +274,14 @@ summitBtn.addEventListener("click", async (event) => {
 
     if (option.selected) {
       selectedJanitor.push(option.value);
+    }
+  }
+  let selectedState;
+  for (let i = 0; i < taskState.options.length; i++) {
+    const option = taskState.options[i];
+
+    if (option.selected) {
+      selectedState = option.value;
     }
   }
   //Janitor
@@ -316,7 +336,7 @@ summitBtn.addEventListener("click", async (event) => {
   TaskSelect.startTime = selectedStartTime;
   TaskSelect.endTime = selectedEndTime;
   TaskSelect.checkoutTime = "0:00";
-  TaskSelect.state = 1;
+  TaskSelect.state = selectedState;
   // console.log(TaskSelect);
   if (confirm("Bạn có muốn tạo công việc này ?") == true) {
     await postTask();

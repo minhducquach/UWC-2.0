@@ -61,10 +61,10 @@ const endTimes = [
 ];
 
 const currentDate = new Date();
-const month = currentDate.getMonth() + 1;
-const day = currentDate.getDate();
+const month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+const day = currentDate.getDate().toString().padStart(2, "0");
 const year = currentDate.getFullYear();
-const hour = currentDate.getHours();
+const hour = currentDate.getHours().toString().padStart(2, "0");
 const minute = currentDate.getMinutes();
 const formattedDate = `${year}/${month}/${day}`;
 const formattedHour = `${hour}:${minute.toString().padStart(2, "0")}`;
@@ -202,7 +202,7 @@ areas.forEach((area) => {
 mcps.forEach((mcp) => {
   const option = document.createElement("option");
   option.value = mcp.id;
-  option.text = mcp.id + ', ' +mcp.address.location_id;
+  option.text = mcp.id + ", " + mcp.address.location_id;
   mcpSelect.appendChild(option);
 });
 
@@ -218,7 +218,7 @@ vehicles.forEach((vehicle) => {
 collectors.forEach((collector) => {
   const option = document.createElement("option");
   option.value = collector.id;
-  option.text = collector.id +', '+collector.name;
+  option.text = collector.id + ", " + collector.name;
   collectorSelect.appendChild(option);
 });
 
@@ -234,7 +234,7 @@ vehicles.forEach((vehicles) => {
 janitors.forEach((janitor) => {
   const option = document.createElement("option");
   option.value = janitor.id;
-  option.text = janitor.id + ', ' +janitor.name;
+  option.text = janitor.id + ", " + janitor.name;
   janitorSelect.appendChild(option);
 });
 

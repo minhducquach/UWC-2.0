@@ -8,7 +8,7 @@ const insertIDTask = `<div class="title_list">Xem chi tiết công việc</div>
 document.querySelector(".view_detail").innerHTML = insertIDTask;
 const insertIDUpdate = `
 <div class="title_list">Chỉnh sửa công việc</div>
-<a class = "item_nav update-task-link"  href="/tasks/updateTask?id=${taskCode}">Chỉnh sửa công việc</a>
+<a class = "item_nav update-task-link">Chỉnh sửa công việc</a>
 <button id="delete" class = "item_nav"style = "color: #d82f2f;">Xóa công việc</button>
 `;
 document.querySelector(".update-task").innerHTML = insertIDUpdate;
@@ -104,18 +104,64 @@ if (result) {
   document.querySelector(".detail_info").innerHTML = contain;
 }
 
+const convertToSecond = (str) => {
+  const [hours, minutes, seconds] = str.split(':').map(Number);
+  return (hours*3600+ minutes*60)
+};
+const getSecond = (date, time) => {
+  let newDate = new Date(date);
+  let seconds = newDate.getTime() / 1000;
+  let newTimeInSecond = '';
+  const suffixesStartTime = time.slice(-2);
+  if (suffixesStartTime == "AM") {
+      newTimeInSecond = convertToSecond(time.slice(0,-3));
+  } else {
+      newTimeInSecond = convertToSecond(time.slice(0,-3)) + 12*3600;
+  }
+  return seconds + newTimeInSecond;
+}
+const validModifyTime = (date, startTime, endTime) => {
+  //get current timestamp in second
+  const currentTimestamp = new Date();
+  const getCurrentTimestamp = Math.round(currentTimestamp.getTime()/1000);
+  //start time in second
+  const startTimeInSecond = getSecond(date, startTime);
+  //end time in second
+  const endTimeInSecond = getSecond(date, endTime);
+  if (startTimeInSecond - 3600 > currentTimestamp && endTimeInSecond < currentTimestamp) {
+      return 1;
+  } else {
+      return 0;
+  }
+}
+const editOption = document.querySelector(".update-task-link");
+editOption.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const resultTime = validModifyTime(taskData.startDate, taskData.startTime, taskData.endTime);
+  if (resultTime) {
+    window.location.href = `/tasks/updateTask?id=${taskCode}`
+  } else {
+    alert ('Quá hạn chỉnh sửa')
+  }
+})
 const deleteBtn = document.getElementById("delete");
 deleteBtn.addEventListener("click", async (event) => {
   event.preventDefault();
-  if (confirm("Bạn có chắc muốn xóa công việc này ?") == true) {
-    await fetch(`/tasks/deleteTask/${taskCode}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    alert("Xóa công việc thành công");
-    window.location.href = "/tasks";
+  // Check time here
+  const resultTime = validModifyTime(taskData.startDate, taskData.startTime, taskData.endTime);
+  if (resultTime) {
+    if (confirm("Bạn có chắc muốn xóa công việc này ?") == true) {
+      await fetch(`/tasks/deleteTask/${taskCode}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      alert("Xóa công việc thành công");
+      window.location.href = "/tasks";
+    }
+  } else {
+    alert ('Đã quá hạn xóa');
   }
 });

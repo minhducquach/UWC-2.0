@@ -181,7 +181,7 @@ areas.forEach((area) => {
 mcps.forEach((mcp) => {
   const option = document.createElement("option");
   option.value = mcp.id;
-  option.text = mcp.id;
+  option.text = mcp.id + ', ' +mcp.address.location_id;
   mcpSelect.appendChild(option);
 });
 
@@ -197,7 +197,7 @@ vehicles.forEach((vehicle) => {
 collectors.forEach((collector) => {
   const option = document.createElement("option");
   option.value = collector.id;
-  option.text = collector.id;
+  option.text = collector.id +', '+collector.name;
   collectorSelect.appendChild(option);
 });
 
@@ -213,7 +213,7 @@ vehicles.forEach((vehicles) => {
 janitors.forEach((janitor) => {
   const option = document.createElement("option");
   option.value = janitor.id;
-  option.text = janitor.id;
+  option.text = janitor.id + ', ' +janitor.name;
   janitorSelect.appendChild(option);
 });
 states.forEach((state) => {

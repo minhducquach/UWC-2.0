@@ -21,9 +21,11 @@ async function getRoute(mapObj, dataRoute) {
     
     
     latlngs.forEach((e, index) => {
+      if(index != latlngs.length -1 ) {
       var marker = new L.Marker(e, {
         icon: new L.NumberedDivIcon({ number: `${index}` }),
       }).addTo(mapObj);
+    }
     });
     console.log()
     L.Routing.control({

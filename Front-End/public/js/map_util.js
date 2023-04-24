@@ -16,15 +16,16 @@ async function getRoute(mapObj, dataRoute) {
   let latlngs = [];
   if (data.solution) {
     data.solution.routes[0].activities.forEach((element) => {
-      if (element.type != "end") {
         latlngs.push(L.latLng([element.address.lat, element.address.lon]));
-      }
     });
+    
+    
     latlngs.forEach((e, index) => {
       var marker = new L.Marker(e, {
         icon: new L.NumberedDivIcon({ number: `${index}` }),
       }).addTo(mapObj);
     });
+    console.log()
     L.Routing.control({
       waypoints: latlngs,
       createMarker: function () {
